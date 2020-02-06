@@ -1,0 +1,90 @@
+<template>
+<div class="col-12 grid-margin">
+                <div class="card card-statistics">
+                  <div class="row">
+                    
+                    <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right" >
+                      <div class="card-body">
+                        
+                      </div>
+                    </div>
+                    <div class="card-col col-xl-4 col-lg-4 col-md-3 col-6 border-right">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                          <div class="wrapper text-center text-sm-left">
+                            <div class="fluid-container">
+                              <h5 class="mb-0 font-weight-medium">InfoAlto Empresa Júnior</h5>
+                              <tr>
+                            <td>
+                              <label class="badge badge-danger badge-pill">Triângulo</label>
+                            </td>
+                            <td>
+                              <label class="badge badge-warning badge-pill">UFV</label>
+                            </td>
+                            <td>
+                              <label class="badge badge-info badge-pill">Cluster 3</label>
+                            </td>
+                          </tr>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                          <i class="mdi mdi-trophy-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <div class="wrapper text-center text-sm-left">
+                            <div class="fluid-container">
+                              <h5 class="mb-0 font-weight-medium">Batalhas</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                          <i class="mdi mdi-chart-bar text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <div class="wrapper text-center text-sm-left">
+                            <div class="fluid-container">
+                              <h5 class="mb-0 font-weight-medium">Resultados</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                          <i class="mdi mdi-upload text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <div class="wrapper text-center text-sm-left">
+                            <div class="fluid-container">
+                              <h5 class="mb-0 font-weight-medium">Atualizar projetos</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+</template>
+<script>
+
+export default {
+    name: 'JuniorEnterpriseMenu',
+    data () {
+    return {
+     
+    }
+  },
+  components:{
+  },
+}
+</script>
+
+<style scoped>
+
+</style>
