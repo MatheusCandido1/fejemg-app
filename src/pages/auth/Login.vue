@@ -2,7 +2,7 @@
 <LoginTemplate>
 <span slot="main">
                 <h4>Olá,</h4>
-                <h6 class="font-weight-light">Faça login para continuar</h6>
+                <h6 class="font-weight-light">Use e-mail e senha para continuar</h6>
                   <div class="form-group">
                     <input type="text" class="form-control form-control-lg" v-model="email" placeholder="E-mail">
                   </div>
