@@ -7,6 +7,7 @@ import JuniorEnterpriseIndex from '@/pages/juniorenterprise/JuniorEnterpriseInde
 import JuniorEnterpriseAdd from '@/pages/juniorenterprise/JuniorEnterpriseAdd'
 import JuniorEnterpriseDetail from '@/pages/juniorenterprise/JuniorEnterpriseDetail'
 
+import CoreAdd from '@/pages/core/CoreAdd'
 import CoreIndex from '@/pages/core/CoreIndex'
 
 Vue.use(Router)
@@ -50,7 +51,7 @@ export default new Router({
       component: CoreIndex
     },
     {
-      path: '/nucleos/addd',
+      path: '/nucleos/add',
       name: 'CoreAdd',
       component: CoreAdd
     }

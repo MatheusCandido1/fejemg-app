@@ -12,7 +12,7 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
 const options = {
-  confirmButtonText: 'Sim, quero sair',
+  confirmButtonText: 'Sim, tenho certeza',
   cancelButtonText: 'Cancelar',
 };
 

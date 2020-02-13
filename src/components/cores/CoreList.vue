@@ -15,7 +15,7 @@
                       <table class="table">
                         <thead class="text-center">
                           <tr>
-                            <th>#</th>
+                            <th></th>
                             <th> Nome </th>
                             <th> Faturamento </th>
                             <th> Projetos </th>
@@ -36,7 +36,7 @@
                           <button type="button" class="btn btn-info btn-icon">
                             <i class="mdi mdi-pencil"></i>
                           </button>
-                          <button type="button" class="btn btn-danger btn-icon">
+                          <button v-on:click="deleteCore()" type="button" class="btn btn-danger btn-icon">
                             <i class="mdi mdi-delete"></i>
                           </button>
                           </td>
@@ -75,6 +75,24 @@ export default {
       })
 
     }
+  },
+  methods: {
+  deleteCore(){
+        this.$confirm("Tem certeza que desejar deletar?").then(
+          () => {
+         this.$toast.success({
+            title:'Núcleos',
+            message:'Núcleo excluido com sucesso.',
+            position:'bottom right',
+            closeButton: false,
+            progressBar: true,
+            showDuration: 2000,
+            hideDuration: 1000,
+            timeOut: 3000
+            })
+});
+        
+      }
   },
   components:{
   },
