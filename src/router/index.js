@@ -48,6 +48,11 @@ export default new Router({
       path: '/nucleos',
       name: 'CoreIndex',
       component: CoreIndex
+    },
+    {
+      path: '/nucleos/addd',
+      name: 'CoreAdd',
+      component: CoreAdd
     }
   ]
 })

@@ -4,6 +4,13 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Núcleos</h4>
+                    <div class="text-right">
+                       <router-link  to="/nucleos/add">
+                    <button type="button" class="btn btn-info btn-icon">
+                            <i class="mdi mdi-playlist-plus"></i>
+                          </button>
+                          </router-link>
+                    </div>
                     <div class="table-responsive">
                       <table class="table">
                         <thead class="text-center">
