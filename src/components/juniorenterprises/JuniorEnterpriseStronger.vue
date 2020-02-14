@@ -7,7 +7,8 @@
                       </div>
                       <td class="pl-0"><h5 class="mb-0 font-weight-medium">Alto Crescimento</h5></td>
                                             <div class="wrapper ml-auto action-bar">
-                          <div class="badge badge-pill badge-danger">32%</div>
+                          <div v-if=" porc_fat < porc_proj" class="badge badge-pill badge-danger">{{ porc_fat}}%</div>                          
+                          <div v-else class="badge badge-pill badge-danger">{{ porc_proj}}%</div>
                       </div>
                     </div>
                   </div>
@@ -53,7 +54,6 @@ export default {
     props:['soma_fat','soma_proj','meta_fat', 'meta_proj', 'porc_fat', 'porc_proj'],
     data () {
     return {
-
     }
   },
   components:{
