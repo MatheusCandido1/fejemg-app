@@ -1,7 +1,6 @@
 <template>
 <AppTemplate>
 <span slot="content">
- <JuniorEnterpriseMenu/> 
  <JuniorEnterpriseBattles/>
   </span>
 </AppTemplate>

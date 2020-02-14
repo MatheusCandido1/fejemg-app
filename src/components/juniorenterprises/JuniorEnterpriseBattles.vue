@@ -1,7 +1,15 @@
 <template>
 <span>
+  
+ <JuniorEnterpriseMenu :nome_ej="this.stronger[0].nome_ej" :nome_nucleo="this.stronger[0].nome_nucleo" :ies="this.stronger[0].ies"/> 
     <div class="row">
- <JuniorEnterpriseStronger  :soma_fat="this.stronger[0].soma_fat" :soma_proj="this.stronger[0].soma_proj"  :meta_fat="this.stronger[0].meta_fat"  :meta_proj="this.stronger[0].meta_proj"  :porc_fat="this.stronger[0].porc_fat"  />
+ <JuniorEnterpriseStronger   
+  :soma_fat="this.stronger[0].soma_fat"
+  :soma_proj="this.stronger[0].soma_proj"
+  :meta_fat="this.stronger[0].meta_fat"
+  :meta_proj="this.stronger[0].meta_proj"  
+  :porc_fat="this.stronger[0].porc_fat" 
+  :porc_proj="this.stronger[0].porc_proj" />
   <JuniorEnterpriseConnected/>
    <JuniorEnterpriseImpact/>
     </div>
@@ -11,6 +19,7 @@
 import JuniorEnterpriseStronger from '@/components/juniorenterprises/JuniorEnterpriseStronger'
 import JuniorEnterpriseConnected from '@/components/juniorenterprises/JuniorEnterpriseConnected'
 import JuniorEnterpriseImpact from '@/components/juniorenterprises/JuniorEnterpriseImpact'
+import JuniorEnterpriseMenu from '@/components/juniorenterprises/JuniorEnterpriseMenu'
 
 
 
@@ -44,7 +53,8 @@ export default {
   components:{
     JuniorEnterpriseStronger,
     JuniorEnterpriseConnected,
-    JuniorEnterpriseImpact
+    JuniorEnterpriseImpact,
+    JuniorEnterpriseMenu
   }
 }
 </script>

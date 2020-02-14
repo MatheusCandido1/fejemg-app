@@ -18,9 +18,7 @@
                           <th>Empresa Júnior</th>
                           <th> Núcleo </th>
                           <th> Cluster </th>
-                          <th> Número de Projetos </th>
-                          <th> Faturamento </th>
-                          <th> Farol AC </th>
+                          <th> IES </th>
                           <th> Ações </th>
                         </tr>
                       </thead>
@@ -31,29 +29,8 @@
                           <td>
                             <div class="badge badge-pill badge-info">3</div>
                           </td>
-                          <td> 
-                            <div class="d-flex justify-content-between">
-                        <small>15</small>
-                        <small>15</small>
-                      </div>
-                            <div class="progress progress-lg mt-2">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                      </div>
-                             </td>
-                             <td> 
-                            <div class="d-flex justify-content-between">
-                        <small>R$ 9.000,00</small>
-                        <small>R$ 18.000,00</small>
-                      </div>
-                            <div class="progress progress-lg mt-2">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                      </div>
-                             </td>
-                          <td> 
-<div class="badge badge-pill badge-outline-danger">⠀</div>
-<div class="badge badge-pill badge-warning">⠀</div>
-<div class="badge badge-pill badge-outline-success">⠀</div>
-
+                          <td>
+                              <div class="badge badge-primary badge-pill">{{item.foundation.name}}</div>
                           </td>
                           <td>
                             <router-link :to="'empresa-junior/'+item.id+'/meta/'+new Date().getFullYear()+''">

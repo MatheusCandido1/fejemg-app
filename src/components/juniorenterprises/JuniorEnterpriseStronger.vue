@@ -15,21 +15,21 @@
                       <div class="template-demo">
                           <h4>Faturamento</h4>
                       <div class="d-flex justify-content-between">
-                        <small >R$ {{meta_fat}}</small>
-                        <small>R$ {{soma_fat}} </small>
+                        <small >R$ {{soma_fat}} </small>
+                        <small>R$ {{meta_fat}} </small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div class="progress-bar bg-danger" role="progressbar" :style="{ 'width': porc_fat+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
+                        <div class="progress-bar bg-success" role="progressbar" :style="{ 'width': porc_fat+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
                       </div>
                     </div>
                     <div class="template-demo">
                           <h4>Projetos</h4>
                       <div class="d-flex justify-content-between">
-                        <small>10</small>
-                        <small>20 </small>
+                        <small> {{soma_proj}} </small>
+                        <small> {{meta_proj}}</small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                        <div class="progress-bar bg-danger" role="progressbar" :style="{ 'width': porc_proj+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{porc_proj}}%</div>
                       </div>
                     </div>
                     <div class="template-demo">
@@ -50,10 +50,10 @@
 
 export default {
     name: 'JuniorEnterpriseStronger',
-    props:['soma_fat','soma_proj','meta_fat', 'meta_proj', 'porc_fat'],
+    props:['soma_fat','soma_proj','meta_fat', 'meta_proj', 'porc_fat', 'porc_proj'],
     data () {
     return {
-     
+
     }
   },
   components:{
