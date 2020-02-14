@@ -3,12 +3,7 @@
                 <div class="card card-statistics">
                   <div class="row">
                     
-                    <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right" >
-                      <div class="card-body">
-                        
-                      </div>
-                    </div>
-                    <div class="card-col col-xl-4 col-lg-4 col-md-3 col-6 border-right">
+                    <div class="card-col col-xl-6 col-lg-6 col-md-3 col-6 border-right">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <div class="wrapper text-center text-sm-left">

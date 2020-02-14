@@ -25,17 +25,22 @@
                       <tbody>
                         <tr v-for="item in ejs" :key="item.id" class="text-center">
                           <td> {{item.name}}</td>
-                          <td> <div class="badge badge-secondary badge-pill">{{item.core.name}}</div> </td>
+                          <td> <div class="badge badge-outline-info badge-pill">{{item.core.name}}</div> </td>
                           <td>
-                            <div class="badge badge-pill badge-info">3</div>
+                            <div class="badge badge-outline-info badge-pill">3</div>
                           </td>
                           <td>
-                              <div class="badge badge-primary badge-pill">{{item.foundation.name}}</div>
+                              <div class="badge badge-outline-dark badge-pill">{{item.foundation.name}}</div>
                           </td>
                           <td>
                             <router-link :to="'empresa-junior/'+item.id+'/meta/'+new Date().getFullYear()+''">
-<button type="button" class="btn btn-inverse-info btn-icon">
-                            <i class="mdi mdi-plus"></i>
+<button type="button" class="btn btn-dark btn-icon">
+                            <i class="mdi mdi-chart-line"></i>
+                          </button>
+                            </router-link>
+                            <router-link  :to="'empresa-junior/'+item.id+'/meta/'+new Date().getFullYear()+''">
+<button type="button" class="btn btn-info btn-icon">
+                            <i class="mdi mdi-circle-edit-outline"></i>
                           </button>
                             </router-link>
                           </td>
