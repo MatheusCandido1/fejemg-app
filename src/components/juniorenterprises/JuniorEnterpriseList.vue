@@ -56,7 +56,7 @@
 
                           </td>
                           <td>
-                            <router-link :to="'empresa-junior/'+item.id+'/meta/2020'">
+                            <router-link :to="'empresa-junior/'+item.id+'/meta/'+new Date().getFullYear()+''">
 <button type="button" class="btn btn-inverse-info btn-icon">
                             <i class="mdi mdi-plus"></i>
                           </button>
