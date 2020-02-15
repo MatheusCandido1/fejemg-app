@@ -21,7 +21,10 @@
                         <small>R$ {{meta_fat}} </small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div class="progress-bar bg-success" role="progressbar" :style="{ 'width': porc_fat+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
+                        <div v-if="porc_fat >= (6 * 8.3333333)" class="progress-bar bg-success" role="progressbar" :style="{ 'width': porc_fat+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
+                        <div v-else-if="porc_fat >= (5 * 8.3333333) && porc_fat < (6 * 8.3333333) " class="progress-bar bg-warning" role="progressbar" :style="{ 'width': porc_fat+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
+                          <div v-else class="progress-bar bg-danger" role="progressbar" :style="{ 'width': porc_fat+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
+
                       </div>
                     </div>
                     <div class="template-demo">
