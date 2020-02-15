@@ -7,9 +7,7 @@
                       </div>
                       <td class="pl-0"><h5 class="mb-0 font-weight-medium">Alto Crescimento</h5></td>
                           <div class="wrapper ml-auto action-bar">                         
-                          <div v-if="porc_proj <= porc_fat && porc_proj <= porc_mem" :class="getClassProj(porc_proj)">{{porc_proj}}%</div>
-                          <div v-if="porc_mem < porc_fat && porc_mem < porc_proj" :class="getClassMem(porc_mem)">{{porc_mem}}%</div>                 
-                          <div v-if="porc_fat <= porc_proj && porc_fat <= porc_mem" :class="getClassFat(porc_fat)">{{porc_fat}}%</div> 
+                          <div v-if="Math.min(this.porc_fat,this.porc_proj,this.porc_mem)" :class="getClass(Math.min(this.porc_fat,this.porc_proj,this.porc_mem))">{{Math.min(this.porc_fat,this.porc_proj,this.porc_mem).toFixed(2)}}%</div>
                       </div>
                     </div>
                   </div>
@@ -21,9 +19,8 @@
                         <small>R$ {{meta_fat}} </small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div v-if="porc_fat >= (6 * 8.333333)" class="progress-bar bg-success" role="progressbar" :style="{ 'width': porc_fat+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
-                        <div v-if="porc_fat >= (5 * 8.333333) && porc_fat < (6 * 8.333333)" class="progress-bar bg-warning" role="progressbar" :style="{ 'width': porc_fat+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
-                        <div v-if="porc_fat < (5 * 8.333333)" class="progress-bar bg-danger" role="progressbar" :style="{ 'width': porc_fat+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_fat}}%</div>
+                        <div  :class="getLight(porc_fat)" role="progressbar" :style="{ 'width': porc_fat+'%'}"  aria-valuemin="0" aria-valuemax="100">{{Math.min(porc_fat).toFixed(2)}}%</div>
+
                       </div>
                       
                     </div>
@@ -34,9 +31,7 @@
                         <small> {{meta_proj}}</small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div v-if="porc_proj >= (6 * 8.333333)" class="progress-bar bg-success" role="progressbar" :style="{ 'width': porc_proj+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_proj}}%</div>
-                        <div v-if="porc_proj >= (5 * 8.333333) && porc_proj < (6 * 8.333333)" class="progress-bar bg-warning" role="progressbar" :style="{ 'width': porc_proj+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_proj}}%</div>
-                        <div v-if="porc_proj < (5 * 8.333333)" class="progress-bar bg-danger" role="progressbar" :style="{ 'width': porc_proj+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_proj}}%</div>
+                        <div  :class="getLight(porc_proj)" role="progressbar" :style="{ 'width': porc_proj+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_proj}}%</div>
                       </div>
                     </div>
                     <div class="template-demo">
@@ -46,9 +41,8 @@
                         <small>{{mem_fat}}%</small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                         <div v-if="porc_mem >= (6 * 8.333333)" class="progress-bar bg-success" role="progressbar" :style="{ 'width': porc_mem+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_mem}}%</div>
-                        <div v-if="porc_mem >= (5 * 8.333333) && porc_mem < (6 * 8.333333)" class="progress-bar bg-warning" role="progressbar" :style="{ 'width': porc_mem+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_mem}}%</div>
-                        <div v-if="porc_mem < (5 * 8.333333)" class="progress-bar bg-danger" role="progressbar" :style="{ 'width': porc_mem+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_mem}}%</div>
+                              <div  :class="getLight(porc_mem)" role="progressbar" :style="{ 'width': porc_mem+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_mem}}%</div>
+
                       </div>
                     </div>
                   </div>
@@ -67,40 +61,29 @@ export default {
   components:{
   },
   methods: {
-    getClassFat(x){
+    getClass(x){
       if(x >= (6 * 8.333333))
       {
         return "badge badge-pill badge-success"
       }
-      else if (x >= (5 * 8.333333) && x < (6 * 8.333333)){ 
+      if (x >= (5 * 8.333333) && x < (6 * 8.333333)){ 
         return "badge badge-pill badge-warning"
-      }else if(x < (5 * 8.333333)){
+      }if(x < (5 * 8.333333)){
         return "badge badge-pill badge-danger"
       }
     },
-    getClassProj(y){
+    getLight(y){
       if(y >= (6 * 8.333333))
       {
-        return "badge badge-pill badge-success"
+        console.log(y)
+        return "progress-bar bg-success"
       }
-      else if (y >= (5 * 8.333333) && y < (6 * 8.333333)){ 
-        return "badge badge-pill badge-warning"
-      }else if(y < (5 * 8.333333)){
-        return "badge badge-pill badge-danger"
+      if (y >= (5 * 8.333333) && y < (6 * 8.333333)){ 
+        return "progress-bar bg-warning"
+      }if(y < (5 * 8.333333)){
+        return "progress-bar bg-danger"
       }
-    },
-    getClassMem(z){
-      console.log('teste')
-      if(z >= (6 * 8.333333))
-      {
-        return "badge badge-pill badge-success"
-      }
-      else if (z >= (5 * 8.333333) && z < (6 * 8.333333)){ 
-        return "badge badge-pill badge-warning"
-      }else if(z < (5 * 8.333333)){
-        return "badge badge-pill badge-danger"
-      }
-    },
+    }
   }
 }
 </script>
