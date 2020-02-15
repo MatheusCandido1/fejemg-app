@@ -9,7 +9,10 @@
   :meta_fat="this.stronger[0].meta_fat"
   :meta_proj="this.stronger[0].meta_proj"  
   :porc_fat="this.stronger[0].porc_fat" 
-  :porc_proj="this.stronger[0].porc_proj" />
+  :porc_proj="this.stronger[0].porc_proj"
+  :mem_meta="this.stronger[0].mem_meta"
+  :mem_fat="this.stronger[0].mem_fat"
+  :porc_mem="this.stronger[0].porc_mem" />
   <JuniorEnterpriseConnected/>
    <JuniorEnterpriseImpact/>
     </div>
@@ -30,7 +33,7 @@ export default {
       stronger: []
     }
   },
-  beforeCreate(){
+  created(){
     let id = this.$route.params.id
     let year = this.$route.params.year
     let usuarioAux = this.$store.getters.getUsuario;

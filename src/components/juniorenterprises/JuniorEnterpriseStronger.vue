@@ -7,8 +7,9 @@
                       </div>
                       <td class="pl-0"><h5 class="mb-0 font-weight-medium">Alto Crescimento</h5></td>
                                             <div class="wrapper ml-auto action-bar">
-                          <div v-if=" porc_fat < porc_proj" class="badge badge-pill badge-danger">{{ porc_fat}}%</div>                          
-                          <div v-else class="badge badge-pill badge-danger">{{ porc_proj}}%</div>
+                          <div v-if=" porc_fat < porc_proj && porc_fat < porc_mem" class="badge badge-pill badge-danger">{{ porc_fat}}%</div>                          
+                          <div v-else-if=" porc_proj < porc_fat && porc_proj < porc_mem" class="badge badge-pill badge-danger">{{ porc_proj}}%</div>
+                          <div v-else class="badge badge-pill badge-danger">{{ porc_mem}}%</div>
                       </div>
                     </div>
                   </div>
@@ -36,11 +37,11 @@
                     <div class="template-demo">
                           <h4> % Membros que executam</h4>
                       <div class="d-flex justify-content-between">
-                        <small>70%</small>
-                        <small>100%</small>
+                        <small>{{mem_meta}}%</small>
+                        <small>{{mem_fat}}%</small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                        <div class="progress-bar bg-warning" role="progressbar" :style="{ 'width': porc_mem+'%'}" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">{{porc_mem}}%</div>
                       </div>
                     </div>
                   </div>
@@ -51,9 +52,10 @@
 
 export default {
     name: 'JuniorEnterpriseStronger',
-    props:['soma_fat','soma_proj','meta_fat', 'meta_proj', 'porc_fat', 'porc_proj'],
+    props:['soma_fat','soma_proj','meta_fat', 'meta_proj', 'porc_fat', 'porc_proj','mem_fat','mem_meta','porc_mem'],
     data () {
     return {
+      
     }
   },
   components:{
