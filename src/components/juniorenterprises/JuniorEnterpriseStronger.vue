@@ -1,11 +1,11 @@
 <template>
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
-                <div class="card card-statistics social-card card-default">
-                  <div class="card-header header-sm">
+                <div class="card card-statistics social-card card-default ">
+                  <div v-bind:style="getHeader(Math.min(this.porc_fat,this.porc_proj,this.porc_mem)) ? 'background-color: #198ae3; color: white' : ''"   class="card-header header-sm">
                     <div class="d-flex align-items-center">
                       <div class="wrapper d-flex align-items-center media-info text-twitter">
                       </div>
-                      <td class="pl-0"><h5 class="mb-0 font-weight-medium">Alto Crescimento</h5></td>
+                      <td  class="pl-0"><h5 class="mb-0 font-weight-medium">Alto Crescimento</h5></td>
                           <div class="wrapper ml-auto action-bar">                         
                           <div v-if="Math.min(this.porc_fat,this.porc_proj,this.porc_mem)" :class="getClass(Math.min(this.porc_fat,this.porc_proj,this.porc_mem))">{{Math.min(this.porc_fat,this.porc_proj,this.porc_mem).toFixed(2)}}%</div>
                       </div>
@@ -19,7 +19,7 @@
                         <small>R$ {{meta_fat}} </small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div  :class="getLight(porc_fat)" role="progressbar" :style="{ 'width': porc_fat+'%'}"  aria-valuemin="0" aria-valuemax="100">{{Math.min(porc_fat).toFixed(2)}}%</div>
+                        <div :class="getLight(porc_fat)" role="progressbar" :style="{ 'width': porc_fat+'%'}"  aria-valuemin="0" aria-valuemax="100">{{Math.min(porc_fat).toFixed(2)}}%</div>
 
                       </div>
                       
@@ -42,7 +42,6 @@
                       </div>
                       <div class="progress progress-lg mt-2">
                               <div  :class="getLight(porc_mem)" role="progressbar" :style="{ 'width': porc_mem+'%'}"  aria-valuemin="0" aria-valuemax="100">{{Math.min(porc_mem).toFixed(2)}}%</div>
-
                       </div>
                     </div>
                   </div>
@@ -62,7 +61,6 @@ export default {
   },
   methods: {
     getClass(x){
-      
       if(x >= (6 * 8.333333) && x < 100)
       {
         return "badge badge-pill badge-success"
@@ -72,14 +70,23 @@ export default {
       }if(x < (5 * 8.333333)){
         return "badge badge-pill badge-danger"
       }
-      if(x >= 100){
+      if(x >= 100)
+      {
         return "badge badge-pill badge-info"
       }
     },
     getLight(y){
-      if(y >= (6 * 8.333333))
+      if(y >= 100)
       {
-        console.log(y)
+        if(Math.min(this.porc_fat,this.porc_proj,this.porc_mem) >= 100){
+        return "progress-bar bg-info"
+        }
+        else{
+        return "progress-bar bg-success"
+        }
+      }
+      if(y >= (6 * 8.333333) && y < 100)
+      {
         return "progress-bar bg-success"
       }
       if (y >= (5 * 8.333333) && y < (6 * 8.333333)){ 
@@ -87,6 +94,13 @@ export default {
       }if(y < (5 * 8.333333)){
         return "progress-bar bg-danger"
       }
+    },
+    getHeader(z){
+      if(z >= 100)
+      {
+        return true
+      }
+        return false
     }
   }
 }
