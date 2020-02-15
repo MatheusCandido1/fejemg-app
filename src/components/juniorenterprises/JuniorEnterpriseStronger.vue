@@ -31,7 +31,7 @@
                         <small> {{meta_proj}}</small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div  :class="getLight(porc_proj)" role="progressbar" :style="{ 'width': porc_proj+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_proj}}%</div>
+                        <div  :class="getLight(porc_proj)" role="progressbar" :style="{ 'width': porc_proj+'%'}"  aria-valuemin="0" aria-valuemax="100">{{Math.min(porc_proj).toFixed(2)}}%</div>
                       </div>
                     </div>
                     <div class="template-demo">
@@ -41,7 +41,7 @@
                         <small>{{mem_fat}}%</small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                              <div  :class="getLight(porc_mem)" role="progressbar" :style="{ 'width': porc_mem+'%'}"  aria-valuemin="0" aria-valuemax="100">{{porc_mem}}%</div>
+                              <div  :class="getLight(porc_mem)" role="progressbar" :style="{ 'width': porc_mem+'%'}"  aria-valuemin="0" aria-valuemax="100">{{Math.min(porc_mem).toFixed(2)}}%</div>
 
                       </div>
                     </div>
@@ -62,7 +62,8 @@ export default {
   },
   methods: {
     getClass(x){
-      if(x >= (6 * 8.333333))
+      
+      if(x >= (6 * 8.333333) && x < 100)
       {
         return "badge badge-pill badge-success"
       }
@@ -70,6 +71,9 @@ export default {
         return "badge badge-pill badge-warning"
       }if(x < (5 * 8.333333)){
         return "badge badge-pill badge-danger"
+      }
+      if(x >= 100){
+        return "badge badge-pill badge-info"
       }
     },
     getLight(y){
