@@ -8,6 +8,7 @@
                       <td  class="pl-0"><h5 class="mb-0 font-weight-medium">Alto Crescimento</h5></td>
                           <div class="wrapper ml-auto action-bar">                         
                           <div v-if="Math.min(this.porc_fat,this.porc_proj,this.porc_mem)" :class="getClass(Math.min(this.porc_fat,this.porc_proj,this.porc_mem))">{{Math.min(this.porc_fat,this.porc_proj,this.porc_mem).toFixed(2)}}%</div>
+                          <div v-if="Math.min(this.porc_eve,this.porc_con) == 0" :class="getClass(Math.min(this.porc_eve,this.porc_con))">0%</div>
                       </div>
                     </div>
                   </div>
