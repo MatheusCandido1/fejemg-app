@@ -27,7 +27,7 @@
                           <td> {{item.name}}</td>
                           <td> <div class="badge badge-outline-info badge-pill">{{item.core.name}}</div> </td>
                           <td>
-                            <div class="badge badge-outline-info badge-pill">3</div>
+                            <div class="badge badge-outline-info badge-pill">{{item.cluster}}</div>
                           </td>
                           <td>
                               <div class="badge badge-outline-dark badge-pill">{{item.foundation.name}}</div>

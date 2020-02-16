@@ -1,7 +1,7 @@
 <template>
 <span>
   
- <JuniorEnterpriseMenu :nome_ej="this.stronger[0].nome_ej" :nome_nucleo="this.stronger[0].nome_nucleo" :ies="this.stronger[0].ies"/> 
+ <JuniorEnterpriseMenu :nome_ej="this.stronger[0].nome_ej" :nome_nucleo="this.stronger[0].nome_nucleo" :ies="this.stronger[0].ies" :cluster="this.stronger[0].cluster"/> 
     <div class="row">
  <JuniorEnterpriseStronger   
   :soma_fat="this.stronger[0].soma_fat"

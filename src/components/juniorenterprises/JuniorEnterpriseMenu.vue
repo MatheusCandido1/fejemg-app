@@ -17,7 +17,7 @@
                               <label class="badge badge-warning badge-pill">{{ ies }}</label>
                             </td>
                             <td>
-                              <label class="badge badge-info badge-pill">Cluster 3</label>
+                              <label class="badge badge-info badge-pill">Cluster {{ cluster}}</label>
                             </td>
                           </tr>
                               
@@ -70,7 +70,7 @@
 
 export default {
     name: 'JuniorEnterpriseMenu',
-    props:['nome_ej','nome_nucleo','ies'],
+    props:['nome_ej','nome_nucleo','ies','cluster'],
     data () {
     return {
      
