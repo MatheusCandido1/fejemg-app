@@ -12231,7 +12231,6 @@ code {
 
 .form-control {
   border: 1px solid #ebedf2;
-  font-family: "ubuntu-regular", sans-serif;
   font-size: 0.8125rem; }
   .form-control:focus {
     background-color: #ffffff;
