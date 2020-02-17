@@ -6,6 +6,7 @@ import Home from '@/pages/home/Home.vue'
 import JuniorEnterpriseIndex from '@/pages/juniorenterprise/JuniorEnterpriseIndex'
 import JuniorEnterpriseAdd from '@/pages/juniorenterprise/JuniorEnterpriseAdd'
 import JuniorEnterpriseDetail from '@/pages/juniorenterprise/JuniorEnterpriseDetail'
+import JuniorEnterpriseEdit from '@/pages/juniorenterprise/JuniorEnterpriseEdit'
 
 import CoreAdd from '@/pages/core/CoreAdd'
 import CoreIndex from '@/pages/core/CoreIndex'
@@ -44,6 +45,11 @@ export default new Router({
       path: '/empresa-junior/:id/meta/:year',
       name: 'JuniorEnterpriseDetail',
       component: JuniorEnterpriseDetail
+    },
+    {
+      path: '/empresa-junior/edit/:id',
+      name: 'JuniorEnterpriseEdit',
+      component: JuniorEnterpriseEdit
     },
     {
       path: '/nucleos',
