@@ -15,7 +15,6 @@
                       <table class="table">
                         <thead class="text-center">
                           <tr>
-                            <th></th>
                             <th> Nome </th>
                             <th> Faturamento </th>
                             <th> Projetos </th>
@@ -25,9 +24,9 @@
                         <tbody>
                           <tr  class="text-center" v-for="item in cores" :key="item.id">
                             
-                              <td >{{item.name}}</td>
-                            <td ><label class="badge badge-success">R$ 1.032,342.00</label>  </td>
-                            <td ><label class="badge badge-info">644</label>   </td>
+                              <td> {{item.name_nuc}}</td>
+                            <td ><label class="badge badge-success">R$ {{item.fat_nuc}}</label>  </td>
+                            <td ><label class="badge badge-info">{{item.fat_proj}}</label>   </td>
                             <td >
 <button type="button" class="btn btn-dark btn-icon">
                             <i class="mdi mdi-rocket"></i>
@@ -55,10 +54,11 @@ export default {
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`nucleos/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`nucleos/`+new Date().getFullYear(), {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
           this.cores = response.data.success_data;
+          console.log(this.cores[0].name_nuc)
         }
 
       })
@@ -68,24 +68,6 @@ export default {
       })
 
     }
-  },
-  methods: {
-  deleteCore(){
-        this.$confirm("Tem certeza que desejar deletar?").then(
-          () => {
-         this.$toast.success({
-            title:'Núcleos',
-            message:'Núcleo excluido com sucesso.',
-            position:'bottom right',
-            closeButton: false,
-            progressBar: true,
-            showDuration: 2000,
-            hideDuration: 1000,
-            timeOut: 3000
-            })
-});
-        
-      }
   },
   components:{
   },
