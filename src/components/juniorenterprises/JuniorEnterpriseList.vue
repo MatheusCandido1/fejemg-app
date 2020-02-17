@@ -25,7 +25,7 @@
                       <tbody>
                         <tr v-for="item in ejs" :key="item.id" class="text-center">
                           <td> {{item.name}}</td>
-                          <td> <div class="badge badge-outline-dark badge-pill">{{item.core.name}}</div> </td>
+                          <td> <div class="badge badge-dark badge-pill">{{item.core.name}}</div> </td>
                           <td>
                             <div class="badge badge-outline-dark badge-pill">{{item.cluster}}</div>
                           </td>

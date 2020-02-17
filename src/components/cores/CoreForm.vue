@@ -12,17 +12,6 @@
                         <label for="exampleInputEmail3">CNPJ</label>
                         <input type="email" class="form-control" v-model="core.cnpj" placeholder="Digite o CNPJ do núcleo, caso não tenha, preencha 00.000.000/0000-00">
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3">Logo</label>
-                        <div class="file-field input-field">
-        <div class="btn">
-          <input type="file" v-on:change="saveImage">
-        </div>
-        <div class="file-path-wrapper">
-          <input class=" file-path validate" type="text">
-        </div>
-      </div>
-                      </div>
                       <button  v-on:click="addNucleo()" class="btn btn-info mr-2">Salvar</button>
                       <button class="btn btn-light">Cancelar</button>
                   </div>
@@ -43,18 +32,6 @@ export default {
     }
   },
   methods:{
-    saveImage(e){
-      let arquivo = e.target.files || e.dataTransfer.files;
-      if(!arquivo.length){
-        return;
-      }
-
-      let reader = new FileReader();
-      reader.onloadend = (e) => {
-        this.imagem = e.target.result;
-      };
-      reader.readAsDataURL(arquivo[0]);
-    },
     addNucleo() {
        console.log(this.core);
         this.$http.post(this.$urlAPI+`nucleos/add`, {
