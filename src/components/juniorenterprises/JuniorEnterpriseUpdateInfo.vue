@@ -43,7 +43,9 @@
       <input type="number" class="form-control" id="" placeholder="Digite o números de Membros da EJ">
     </div>
   </div>
-
+<div class="text-right">
+    <button type="button" class="btn btn-info btn-fw">Salvar</button>
+</div>
   </span>
 
   
