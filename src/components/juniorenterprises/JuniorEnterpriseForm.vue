@@ -71,7 +71,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Cursos</label>
                             <div class="col-sm-9">
-                             <multiselect v-model="degree" 	select-label="Clique para escolher" deselect-label="Clique para cancelar" placeholder="Escolha o(s) curso(s)" track-by="id" :options="degrees" label="name" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
+                             <multiselect v-model="ej.degree" 	select-label="Clique para escolher" deselect-label="Clique para cancelar" placeholder="Escolha o(s) curso(s)" track-by="id" :options="degrees" label="name" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
                             </div>
                           </div>
                         </div>
@@ -79,7 +79,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Serviços</label>
                             <div class="col-sm-9">
-                              <multiselect v-model="service" select-label="Clique para escolher" deselect-label="Clique para cancelar" placeholder="Escolha o(s) serviço(s)" track-by="id" :options="services" label="name" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
+                              <multiselect v-model="ej.service" select-label="Clique para escolher" deselect-label="Clique para cancelar" placeholder="Escolha o(s) serviço(s)" track-by="id" :options="services" label="name" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
 
                             </div>
                           </div>
@@ -100,8 +100,6 @@ export default {
     name: 'JuniorEnterpriseForm',
     data () {
     return {
-        degree:'',
-        service:'',
         foundation:'',
         core:'',
         cores:[],
@@ -118,8 +116,8 @@ export default {
           members:'',
           foundation_id:'',
           core_id:'',
-          services_id: [],
-          degrees_id: []
+          service: [],
+          degree: []
         }
     }
   },
@@ -171,6 +169,7 @@ export default {
         name: newTag,
         code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
       }
+      this.services.push(tag)
       this.degrees.push(tag)
     },
    addEj() {
@@ -183,13 +182,15 @@ export default {
         website: this.ej.website,
         members: this.ej.members,
         foundation_id: this.ej.foundation_id.id,
-        core_id: this.ej.core_id.id
+        core_id: this.ej.core_id.id,
+        services_id: this.ej.service.map(service => service.id),
+        degrees_id: this.ej.degree.map(degree => degree.id)
       },
       {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}}).then(response => {
          if(response.data.success_data){
           this.$toast.success({
             title:'Empresas Júniores',
-            message:'EJ salva com sucesso!',
+            message: response.data.success_message,
             position:'bottom right',
             closeButton: false,
             progressBar: true,
