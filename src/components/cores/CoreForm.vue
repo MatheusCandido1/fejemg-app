@@ -33,7 +33,6 @@ export default {
   },
   methods:{
     addNucleo() {
-       console.log(this.core);
         this.$http.post(this.$urlAPI+`nucleos/add`, {
         name: this.core.name,
         cnpj: this.core.cnpj,
