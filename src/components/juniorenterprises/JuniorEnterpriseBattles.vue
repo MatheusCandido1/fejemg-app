@@ -56,10 +56,17 @@ export default {
 
       })
       .catch(e => {
-        console.log(e)
-        alert("Erro! Tente novamente mais tarde!");
+         this.$toast.error({
+            title:'Ops...',
+            message:'Erro interno. Tente novamente mais tarde',
+            position:'bottom right',
+            closeButton: false,
+            progressBar: true,
+            showDuration: 2000,
+            hideDuration: 1000,
+            timeOut: 3000
+            })
       })
-
     }
   },
   components:{

@@ -3,29 +3,29 @@
 <div class="form-row">
     <div class="form-group col-md-4">
     <label for="">Nome da Empresa Júnior</label>
-      <input type="text" class="form-control" id="" placeholder="Digite o nome da EJ">
+      <input type="text" class="form-control" v-model="ej.name" placeholder="Digite o nome da EJ">
     </div>
     <div class="form-group col-md-4">
       <label for="">E-mail de contato</label>
-      <input type="text" class="form-control" id="" placeholder="Digite o e-mail de Contato da EJ">
+      <input type="text" class="form-control" v-model="ej.email" placeholder="Digite o e-mail de Contato da EJ">
     </div>
     <div class="form-group col-md-4">
       <label for="">Sobre</label>
-      <textarea class="form-control" placeholder="Copiar da Brasil Júnior" id="exampleTextarea1" rows="4"></textarea>
+      <textarea class="form-control" v-model="ej.about" placeholder="Copiar da Brasil Júnior" id="exampleTextarea1" rows="4"></textarea>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-4">
     <label for="">Data de federação</label>
-      <input type="date" class="form-control" id="">
+      <input type="date"  class="form-control" v-model="ej.associated_since">
     </div>
     <div class="form-group col-md-4">
       <label for="">CNPJ</label>
-      <input type="text" class="form-control" id="" placeholder="Digite somente números">
+      <input type="text" v-model="ej.cnpj" class="form-control"  placeholder="Digite somente números">
     </div>
     <div class="form-group col-md-4">
       <label for="">Website</label>
-      <input type="text" class="form-control" id="" placeholder="Digite o website da EJ">
+      <input type="text" v-model="ej.website"  class="form-control"  placeholder="Digite o website da EJ">
     </div>
   </div>
 
@@ -40,11 +40,11 @@
     </div>
     <div class="form-group col-md-4">
       <label for="">Número de membros</label>
-      <input type="number" class="form-control" id="" placeholder="Digite o números de Membros da EJ">
+      <input type="number" v-model="ej.members" class="form-control" id="" placeholder="Digite o números de Membros da EJ">
     </div>
   </div>
 <div class="text-right">
-    <button type="button" class="btn btn-info btn-fw">Salvar</button>
+    <button type="button" v-on:click="editEj()" class="btn btn-info btn-fw">Salvar</button>
 </div>
   </span>
 
@@ -61,7 +61,21 @@ export default {
         foundation:'',
         core:'',
       cores:[],
-      foundations:[]
+      foundations:[],
+      ej:{
+        id: '',
+          name: '',
+          email: '',
+          about: '',
+          associated_since: '',
+          cnpj:'',
+          website:'',
+          members:'',
+          foundation_id:'',
+          core_id:'',
+          service: [],
+          degree: []
+        }
     }
   },
   components:{
@@ -69,6 +83,7 @@ export default {
   },
   created()
   {
+      this.fillEj()
       this.loadCores()
       this.loadFoundations()
   },
@@ -95,6 +110,34 @@ export default {
         code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
       }
       this.degrees.push(tag)
+    },
+    fillEj(){
+    let id = this.$route.params.id
+    let usuarioAux = this.$store.getters.getUsuario;
+    if(usuarioAux){
+      this.usuario = this.$store.getters.getUsuario;
+      this.$http.get(this.$urlAPI+`ejs/`+id, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      .then(response => {
+        if(response.status){
+          this.ej = response.data.success_data[0];
+        }
+      })
+      .catch(e => {
+         this.$toast.error({
+            title:'Ops...',
+            message:'Erro interno. Tente novamente mais tarde',
+            position:'bottom right',
+            closeButton: false,
+            progressBar: true,
+            showDuration: 2000,
+            hideDuration: 1000,
+            timeOut: 3000
+            })
+      })
+    }
+    },
+    editEj(){
+      
     }
   }
 }
