@@ -43,6 +43,16 @@
       <input type="number" v-model="ej.members" class="form-control" id="" placeholder="Digite o números de Membros da EJ">
     </div>
   </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <label for="">Cursos</label>                             
+      <multiselect v-model="ej.degrees" 	select-label="Clique para escolher" deselect-label="Clique para cancelar" placeholder="Escolha o(s) curso(s)" track-by="id" :options="degrees" label="name" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="">Serviços</label>
+      <multiselect v-model="ej.services" select-label="Clique para escolher" deselect-label="Clique para cancelar" placeholder="Escolha o(s) serviço(s)" track-by="id" :options="services" label="name" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
+    </div>
+  </div>
 <div class="text-right">
     <button type="button" v-on:click="editEj()" class="btn btn-info btn-fw">Salvar</button>
 </div>
@@ -58,10 +68,12 @@ export default {
     name: 'JuniorEnterpriseUpdateInfo',
     data () {
     return {
-        foundation:'',
-        core:'',
+      foundation:'',
+      core:'',
       cores:[],
       foundations:[],
+      services:[],
+      degrees:[],
       ej:{
         id: '',
           name: '',
@@ -86,6 +98,8 @@ export default {
       this.fillEj()
       this.loadCores()
       this.loadFoundations()
+      this.loadDegrees()
+      this.loadServices()
   },
   methods:{
     loadCores(){
@@ -101,6 +115,22 @@ export default {
       .then(response => {
         if(response.status){
           this.foundations = response.data.success_data;
+        }
+      })
+    },
+    loadDegrees(){
+      this.$http.get(this.$urlAPI+`cursos`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      .then(response => {
+        if(response.status){
+          this.degrees = response.data.success_data;
+        }
+      })
+    },
+    loadServices(){
+      this.$http.get(this.$urlAPI+`servicos`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      .then(response => {
+        if(response.status){
+          this.services = response.data.success_data;
         }
       })
     },
