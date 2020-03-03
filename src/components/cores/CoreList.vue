@@ -1,7 +1,6 @@
 <template>
 <span>
-<div class="col-12 grid-margin">
-                <div class="card">
+  <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Núcleos</h4>
                     <div class="text-right">
@@ -12,7 +11,8 @@
                           </router-link>
                     </div>
                     <div class="table-responsive">
-                      <table class="table">
+
+                     <table class="table">
                         <thead class="text-center">
                           <tr>
                             <th> Nome </th>
@@ -34,11 +34,10 @@
                           </td>
                           </tr>
                         </tbody>
-                      </table>
+                      </table> 
                     </div>
                   </div>
                 </div>
-              </div>
 </span>
 </template>
 <script>
@@ -59,6 +58,8 @@ export default {
         if(response.status){
           this.cores = response.data.success_data;
           console.log(this.cores[0].name_nuc)
+          console.log(this.cores[0].fat_nuc)
+          console.log(this.cores[0].fat_proj)
         }
 
       })

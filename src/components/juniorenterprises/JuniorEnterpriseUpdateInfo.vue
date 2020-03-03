@@ -69,21 +69,26 @@ export default {
   },
   created()
   {
+      this.loadCores()
+      this.loadFoundations()
+  },
+  methods:{
+    loadCores(){
       this.$http.get(this.$urlAPI+`nucleos`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
           this.cores = response.data.success_data;
         }
       })
-
+    },
+    loadFoundations(){
       this.$http.get(this.$urlAPI+`instituicoes`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
           this.foundations = response.data.success_data;
         }
       })
-  },
-  methods:{
+    },
      addTag (newTag) {
       const tag = {
         name: newTag,
