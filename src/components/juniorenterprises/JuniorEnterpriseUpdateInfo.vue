@@ -32,11 +32,11 @@
   <div class="form-row">
     <div class="form-group col-md-4">
     <label for="">Núcleo</label>                             
-     <multiselect v-model="core" :options="cores" deselect-label="Clique para cancelar" select-label="Clique para escolher" placeholder="Selecione ou pesquise o núcleo" label="name" track-by="id"></multiselect>
+     <multiselect v-model="ej.core" :options="cores" deselect-label="Clique para cancelar" select-label="Clique para escolher" placeholder="Selecione ou pesquise o núcleo" label="name" track-by="name"></multiselect>
     </div>
     <div class="form-group col-md-4">
       <label for="">Instituição de Ensino</label>
-      <multiselect v-model="foundation" :options="foundations" deselect-label="Clique para cancelar" select-label="Clique para escolher"  placeholder="Selecione ou pesquise a IES" label="name" track-by="id"></multiselect>
+      <multiselect v-model="ej.foundation" :options="foundations" deselect-label="Clique para cancelar" select-label="Clique para escolher"  placeholder="Selecione ou pesquise a IES" label="name" track-by="id"></multiselect>
     </div>
     <div class="form-group col-md-4">
       <label for="">Número de membros</label>
@@ -71,8 +71,8 @@ export default {
           cnpj:'',
           website:'',
           members:'',
-          foundation_id:'',
-          core_id:'',
+          foundation:[],
+          core:[],
           service: [],
           degree: []
         }
@@ -112,6 +112,7 @@ export default {
       this.degrees.push(tag)
     },
     fillEj(){
+    this.$parent.$parent.$parent.startProgress()
     let id = this.$route.params.id
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
@@ -120,6 +121,7 @@ export default {
       .then(response => {
         if(response.status){
           this.ej = response.data.success_data[0];
+              this.$parent.$parent.$parent.stopProgress()
         }
       })
       .catch(e => {
