@@ -91,7 +91,7 @@ export default {
         }
     }
   },
-  mounted()
+  created()
   {
       this.fillGoals()
   },
@@ -99,6 +99,7 @@ export default {
   },
   methods:{
     fillGoals(){
+    this.$parent.$parent.$parent.startProgress()
     let id = this.$route.params.id
     let year = new Date().getFullYear()
     let usuarioAux = this.$store.getters.getUsuario;
@@ -108,6 +109,7 @@ export default {
       .then(response => {
         if(response.status){
           this.goal = response.data.success_data[0];
+          this.$parent.$parent.$parent.stopProgress()
         }
       })
       .catch(e => {

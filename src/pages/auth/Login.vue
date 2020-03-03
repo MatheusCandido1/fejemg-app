@@ -44,6 +44,8 @@ export default {
   },
   methods:{
     login(){
+      
+    this.$parent.startProgress()
       this.$http.post(this.$urlAPI+`login`, {
         email: this.email,
         password:this.password
@@ -94,6 +96,7 @@ export default {
             })
 
         }
+        this.$parent.stopProgress()
       })
       .catch(e => {
          this.$toast.error({
