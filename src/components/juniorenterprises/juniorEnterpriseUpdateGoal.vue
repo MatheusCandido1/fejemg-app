@@ -19,11 +19,11 @@
     </div>
     <div class="form-group col-md-4">
       <label for="">% de Membros atual</label>
-      <input type="text" class="form-control" v-model="goal.mem_fat" placeholder="Digite somente números">
+      <input type="text" class="form-control" v-model="goal.members_performing" placeholder="Digite somente números">
     </div>
     <div class="form-group col-md-4">
       <label for="">NPS atual</label>
-      <input type="text" class="form-control" v-model="goal.soma_nps" placeholder="Digite somente números">
+      <input type="text" class="form-control" v-model="goal.nps" placeholder="Digite somente números">
     </div>
   </div>
     <hr class="my-1">
@@ -31,33 +31,33 @@
   
     <div class="form-group col-md-4">
       <label for="">Faturamento</label>
-      <input type="text" class="form-control" v-model="goal.meta_fat"  placeholder="Digite no formato 0.00">
+      <input type="text" class="form-control" v-model="goal.billing"  placeholder="Digite no formato 0.00">
     </div>
     <div class="form-group col-md-4">
       <label for="">Projetos</label>
-      <input type="text" class="form-control" v-model="goal.meta_proj"  placeholder="Digite somente números">
+      <input type="text" class="form-control" v-model="goal.projects"  placeholder="Digite somente números">
     </div>
     <div class="form-group col-md-4">
       <label for="">% Membros que executam</label>
-      <input type="text" class="form-control"  v-model="goal.mem_meta" placeholder="Digite somente números">
+      <input type="text" class="form-control"  v-model="goal.members_performing_goal" placeholder="Digite somente números">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="">Ações compartilhadas</label>
-      <input type="text" class="form-control" v-model="goal.meta_con"  placeholder="Digite somente números">
+      <input type="text" class="form-control" v-model="goal.shared_actions"  placeholder="Digite somente números">
     </div>
     <div class="form-group col-md-6">
       <label for="">% de Membros em eventos</label>
-      <input type="text" class="form-control" v-model="goal.meta_eve"  placeholder="Digite somente números">
+      <input type="text" class="form-control" v-model="goal.members_events"  placeholder="Digite somente números">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="">NPS</label>
-      <input type="number" class="form-control" v-model="goal.meta_nps"  placeholder="Digite somente números">
+      <input type="number" class="form-control" v-model="goal.current_nps"  placeholder="Digite somente números">
     </div>
     <div class="form-group col-md-6">
       <label for="">Projetos de Impacto</label>
@@ -79,15 +79,19 @@ export default {
     data () {
     return {
       goal:{
+          junior_enterprise_id: '', 
           cluster: '',
-          mem_fat: '',
-          soma_nps: '',
-          meta_proj: '',
-          meta_fat: '',
-          mem_meta: '',
-          meta_con:'',
-          meta_eve:'',
-          meta_nps:''
+          billing: '',
+          projects: '',
+          members_performing: '',
+          shared_actions: '',
+          members_events: '',
+          nps:'',
+          impact_projects:'',
+          meta_nps:'',
+          members_performing_goal: '',
+          current_nps: '',
+          current_members_events: ''
         }
     }
   },
@@ -105,10 +109,11 @@ export default {
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs/`+id+`/meta/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`ejs/`+id+`/metas/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
-          this.goal = response.data.success_data[0];
+          this.goal = response.data.success_data[0].junior_enterprise_goals[0];
+          console.log(this.goal)
           this.$parent.$parent.$parent.stopProgress()
         }
       })

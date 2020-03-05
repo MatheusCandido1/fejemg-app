@@ -48,7 +48,7 @@ export default {
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs/`+id+`/meta/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`ejs/`+id+`/resultados/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
           this.data = response.data.success_data;

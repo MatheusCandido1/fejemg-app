@@ -8,16 +8,16 @@
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <div class="wrapper text-center text-sm-left">
                             <div class="fluid-container">
-                              <h5 class="mb-0 font-weight-medium">{{ nome_ej }}</h5>
+                              <h5 class="mb-0 font-weight-medium">{{nome_ej}}</h5>
                               <tr>
                             <td>
-                              <label class="badge badge-danger badge-pill">{{ nome_nucleo}}</label>
+                              <label class="badge badge-danger badge-pill">{{nome_nucleo}}</label>
                             </td>
                             <td>
-                              <label class="badge badge-warning badge-pill">{{ ies }}</label>
+                              <label class="badge badge-warning badge-pill">{{ies}}</label>
                             </td>
                             <td>
-                              <label class="badge badge-info badge-pill">Cluster {{ cluster}}</label>
+                              <label class="badge badge-info badge-pill">Cluster {{cluster}}</label>
                             </td>
                           </tr>
                               

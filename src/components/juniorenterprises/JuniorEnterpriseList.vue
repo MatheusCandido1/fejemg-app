@@ -64,12 +64,11 @@ export default {
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs  `, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`ejs`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
           this.ejs = response.data.success_data;
         }
-
       })
       .catch(e => {
         console.log(e)
