@@ -38,8 +38,8 @@
                     <div class="template-demo">
                           <h4> % Membros que executam</h4>
                       <div class="d-flex justify-content-between">
+                        <small>{{mem_fat }}%</small>
                         <small>{{mem_meta}}%</small>
-                        <small>{{mem_fat}}%</small>
                       </div>
                       <div class="progress progress-lg mt-2">
                               <div  :class="getLight(porc_mem)" role="progressbar" :style="{ 'width': porc_mem+'%'}"  aria-valuemin="0" aria-valuemax="100">{{Math.min(porc_mem).toFixed(2)}}%</div>
@@ -59,6 +59,9 @@ export default {
     }
   },
   components:{
+  },
+  mounted(){
+    
   },
   methods: {
     getClass(x){

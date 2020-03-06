@@ -42,7 +42,7 @@ export default {
       data: []
     }
   },
-  created(){
+  beforeCreate(){
     let id = this.$route.params.id
     let year = this.$route.params.year
     let usuarioAux = this.$store.getters.getUsuario;

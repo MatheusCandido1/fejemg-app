@@ -160,7 +160,7 @@ export default {
             hideDuration: 1000,
             timeOut: 3000
             })
-          this.$router.push('/empresas-juniores');
+          this.$router.back();
         }else if(response.data.status == false && response.data.validacao){
             this.$toast.error({
             title:'Ops...',
