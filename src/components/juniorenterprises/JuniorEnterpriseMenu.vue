@@ -51,6 +51,7 @@
                       </div>
                     </div>
                     <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
+                            <router-link :to="'/empresa-junior/'+id_ej+'/projetos/add'">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <i class="mdi mdi-upload text-primary mr-0 mr-sm-4 icon-lg"></i>
@@ -61,6 +62,7 @@
                           </div>
                         </div>
                       </div>
+                      </router-link>
                     </div>
                   </div>
                 </div>
@@ -70,9 +72,10 @@
 
 export default {
     name: 'JuniorEnterpriseMenu',
-    props:['nome_ej','nome_nucleo','ies','cluster'],
+    props:['nome_ej','nome_nucleo','ies','cluster','id_ej'],
     data () {
     return {
+      
      
     }
   },

@@ -1,25 +1,25 @@
 <template>
 <AppTemplate>
-<span slot="content">
- <JuniorEnterpriseBattles/>
+  <span slot="content">
+ <ProjectForm/> 
   </span>
 </AppTemplate>
 </template>
 <script>
 import AppTemplate from '@/templates/AppTemplate'
-import JuniorEnterpriseBattles from '@/components/juniorenterprises/JuniorEnterpriseBattles'
+import ProjectForm from '@/components/projects/ProjectForm'
 
 
 
 export default {
-    name: 'JuniorEnterpriseDetail',
+    name: 'ProjectAdd',
     data () {
     return {
     }
   },
   components:{
     AppTemplate,
-    JuniorEnterpriseBattles
+    ProjectForm
   }
 }
 </script>
