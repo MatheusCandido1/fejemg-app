@@ -44,7 +44,6 @@ export default {
   },
   methods:{
     login(){
-      
     this.$parent.startProgress()
       this.$http.post(this.$urlAPI+`login`, {
         email: this.email,
@@ -99,6 +98,7 @@ export default {
         this.$parent.stopProgress()
       })
       .catch(e => {
+        console.log(e.response)
          this.$toast.error({
             title:'Ops...',
             message:'Erro interno. Tente novamente mais tarde',

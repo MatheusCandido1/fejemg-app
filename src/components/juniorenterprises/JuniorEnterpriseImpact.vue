@@ -30,7 +30,7 @@
                         <small>20 </small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"  aria-valuemin="0" aria-valuemax="100">0.00%</div>
                       </div>
                     </div>
                   </div>

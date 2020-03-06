@@ -4,7 +4,7 @@
                 <h4>Olá,</h4>
                 <h6 class="font-weight-light">Faça sua conta!</h6>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" v-model="nome" placeholder="Nome">
+                    <input type="text" class="form-control form-control-lg" v-model="name" placeholder="Nome">
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control form-control-lg" v-model="email" placeholder="E-mail">
@@ -52,14 +52,11 @@ export default {
         password_confirmation:this.password_confirmation
       })
       .then(response => {
-        //console.log(response)
         if(response.data.status){
-          // login com sucesso
           sessionStorage.setItem('usuario',JSON.stringify(response.data.usuario));
           this.$router.push('/');
         }else if(response.data.status == false && response.data.validacao){
           // erros de validação
-          console.log('erros de validação')
           let erros = '';
           for(let erro of Object.values(response.data.erros)){
             erros += erro +" ";
@@ -71,7 +68,6 @@ export default {
         }
       })
       .catch(e => {
-        console.log(e)
         alert("Erro! Tente novamente mais tarde!");
       })
     }

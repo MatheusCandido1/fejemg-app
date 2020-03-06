@@ -67,7 +67,7 @@
 
 
         <div class="text-right">
-    <button type="button" class="btn btn-info btn-fw">Salvar</button>
+    <button type="button" v-on:click="updateGoals()" class="btn btn-info btn-fw">Salvar</button>
 </div>
   </div>
 </div>
@@ -79,7 +79,7 @@ export default {
     data () {
     return {
       goal:{
-          junior_enterprise_id: '', 
+          id: '', 
           cluster: '',
           billing: '',
           projects: '',
@@ -130,6 +130,52 @@ export default {
             })
       })
     }
+    },
+    updateGoals(){
+      this.$http.put(this.$urlAPI+`atualizar/meta/`+this.goal.id, {
+          cluster: this.goal.cluster,
+          billing: this.goal.billing,
+          projects: this.goal.projects,
+          members_performing: this.goal.members_performing,
+          shared_actions: this.goal.shared_actions,
+          members_events: this.goal.members_events,
+          nps:this.goal.nps,
+          impact_projects:this.goal.impact_projects,
+          meta_nps:this.goal.meta_nps,
+          members_performing_goal: this.goal.members_performing_goal,
+          current_nps: this.goal.current_nps,
+          current_members_events: this.goal.current_members_events
+      },{"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      .then(response => {
+         if(response.data.success_data){
+          this.$toast.success({
+            title:'Empresas Júniores',
+            message: 'Metas atualizadas com sucesso',
+            position:'bottom right',
+            closeButton: false,
+            progressBar: true,
+            showDuration: 2000,
+            hideDuration: 1000,
+            timeOut: 3000
+            })
+          this.$router.push('/empresas-juniores');
+        }else if(response.data.status == false && response.data.validacao){
+            this.$toast.error({
+            title:'Ops...',
+            message:'Verifique os dados',
+            position:'bottom right',
+            closeButton: false,
+            progressBar: true,
+            showDuration: 2000,
+            hideDuration: 1000,
+            timeOut: 3000
+            })
+        }
+      })
+      .catch(e => {
+        console.log(e)
+        alert("Erro! Tente novamente mais tarde!");
+      })
     }
   }
 }
