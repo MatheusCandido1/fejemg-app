@@ -24,6 +24,7 @@
   :soma_nps="this.data[0].soma_nps"
   :meta_nps="this.data[0].meta_nps"
   :porc_nps="this.data[0].porc_nps"/>
+  <JuniorEnterpriseBillingChart/>
     </div>
 </span>
 </template>
@@ -32,6 +33,7 @@ import JuniorEnterpriseStronger from '@/components/juniorenterprises/JuniorEnter
 import JuniorEnterpriseConnected from '@/components/juniorenterprises/JuniorEnterpriseConnected'
 import JuniorEnterpriseImpact from '@/components/juniorenterprises/JuniorEnterpriseImpact'
 import JuniorEnterpriseMenu from '@/components/juniorenterprises/JuniorEnterpriseMenu'
+import JuniorEnterpriseBillingChart from '@/components/juniorenterprises/JuniorEnterpriseBillingChart'
 
 
 
@@ -73,7 +75,8 @@ export default {
     JuniorEnterpriseStronger,
     JuniorEnterpriseConnected,
     JuniorEnterpriseImpact,
-    JuniorEnterpriseMenu
+    JuniorEnterpriseMenu,
+    JuniorEnterpriseBillingChart
   }
 }
 </script>

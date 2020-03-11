@@ -2,7 +2,7 @@
 <div class="col-lg-6 grid-margin stretch-card">
     <div class="card">
         <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-            <h4 class="card-title">Faturamento</h4>
+            <h4 class="card-title">Faturamento por mês</h4>
                 <apexchart width="500" type="area" :options="chartOptions" :series="series"></apexchart>
         </div>
     </div>
@@ -12,7 +12,7 @@
 import VueApexCharts from "vue-apexcharts";
 
 export default {
-    name:  'Stronger',
+    name:  'JuniorEntepriseBillingChart',
     data: function() {
       return {
         chartOptions: {
