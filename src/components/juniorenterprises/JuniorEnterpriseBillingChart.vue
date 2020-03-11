@@ -32,18 +32,22 @@ export default {
             size: 8
             }
             },
-          xaxis: {
-            categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+          yaxis: {
+            categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+            labels: {
+    formatter: function (value) {
+      if(value == 0){
+      return "R$ 0,00";
+      }else{
+      return "R$ " + value + ".000,00";}
+    }
+  }
           }
         },
-
         series: [{
           name: 'Meta',
           data: []
-        },{
-            name: 'Faturamento',
-            data: []
-          }],
+        }],
     }
   },
   components: {
@@ -56,13 +60,9 @@ export default {
       this.$http.get(this.$urlAPI+`ejs/1/faturamento/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
           this.series = [{ 
-            name: 'Faturamento',
-            data: response.data 
-            },{ 
             name: 'Meta',
-            data: response.data
+            data: response.data 
             }];
-            console.log(response.data[0])
       })
     }
   },
