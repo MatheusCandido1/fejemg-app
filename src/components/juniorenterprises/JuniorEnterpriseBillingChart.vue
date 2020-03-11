@@ -53,7 +53,7 @@ export default {
      let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`faturamento/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`ejs/1/faturamento/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
           this.series = [{ 
             name: 'Faturamento',
@@ -62,7 +62,7 @@ export default {
             name: 'Meta',
             data: response.data
             }];
-            
+            console.log(response.data[0])
       })
     }
   },

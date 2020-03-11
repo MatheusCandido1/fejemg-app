@@ -55,7 +55,6 @@ export default {
         if(response.status){
           this.data = response.data.success_data;
         }
-
       })
       .catch(e => {
          this.$toast.error({
