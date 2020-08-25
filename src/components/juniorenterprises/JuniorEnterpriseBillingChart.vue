@@ -3,14 +3,13 @@
     <div class="card">
         <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
             <h4 class="card-title">Faturamento por mês</h4>
-                <apexchart width="500" type="area" :options="chartOptions" :series="series"></apexchart>
+                <apexchart width="400" type="area" :options="chartOptions" :series="series"></apexchart>
         </div>
     </div>
 </div>
 </template>
 <script>
 import VueApexCharts from "vue-apexcharts";
-
 export default {
     name:  'JuniorEntepriseBillingChart',
     data: function() {
@@ -33,18 +32,17 @@ export default {
             }
             },
           yaxis: {
-            categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
             labels: {
     formatter: function (value) {
-      if(value == 0){
-      return "R$ 0,00";
-      }else{
-      return "R$ " + value + ".000,00";}
+      return "R$ " + value;
     }
-  }
-          }
+  },
+          },
         },
         series: [{
+          name: 'Resultado',
+          data: []
+        }, {
           name: 'Meta',
           data: []
         }],
@@ -59,10 +57,14 @@ export default {
       this.usuario = this.$store.getters.getUsuario;
       this.$http.get(this.$urlAPI+`ejs/1/faturamento/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
-          this.series = [{ 
+        console.log(response)
+         this.series = [{ 
             name: 'Meta',
-            data: response.data 
-            }];
+            data: response.data.meta
+            }, {
+            name: 'Resultado',
+            data: response.data.resultado
+            }]; 
       })
     }
   },
@@ -71,5 +73,4 @@ export default {
 }
 </script>
 <style scoped>
-
 </style>
