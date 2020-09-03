@@ -25,6 +25,7 @@
   :meta_nps="this.data[0].meta_nps"
   :porc_nps="this.data[0].porc_nps"/>
   <JuniorEnterpriseBillingChart/>
+  <JuniorEnterpriseProjectChart/>
     </div>
 </span>
 </template>
@@ -34,6 +35,7 @@ import JuniorEnterpriseConnected from '@/components/juniorenterprises/JuniorEnte
 import JuniorEnterpriseImpact from '@/components/juniorenterprises/JuniorEnterpriseImpact'
 import JuniorEnterpriseMenu from '@/components/juniorenterprises/JuniorEnterpriseMenu'
 import JuniorEnterpriseBillingChart from '@/components/juniorenterprises/JuniorEnterpriseBillingChart'
+import JuniorEnterpriseProjectChart from '@/components/juniorenterprises/JuniorEnterpriseProjectChart'
 
 
 
@@ -75,7 +77,8 @@ export default {
     JuniorEnterpriseConnected,
     JuniorEnterpriseImpact,
     JuniorEnterpriseMenu,
-    JuniorEnterpriseBillingChart
+    JuniorEnterpriseBillingChart,
+    JuniorEnterpriseProjectChart
   }
 }
 </script>
