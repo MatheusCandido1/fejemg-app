@@ -27,6 +27,7 @@
                       </div>
                     </div>
                     <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
+                      <button @click="ChooseMenuOption1">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <i class="mdi mdi-trophy-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
@@ -37,8 +38,11 @@
                           </div>
                         </div>
                       </div>
+                      </button>
+                      </router-link>
                     </div>
                    <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
+                      <button @click="ChooseMenuOption2">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <i class="mdi mdi-chart-bar text-primary mr-0 mr-sm-4 icon-lg"></i>
@@ -49,9 +53,11 @@
                           </div>
                         </div>
                       </div>
+                     </button>
+
                     </div>
                     <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
-                            <router-link :to="'/empresa-junior/'+id_ej+'/projetos/add'">
+                            <button @click="ChooseMenuOption3">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <i class="mdi mdi-upload text-primary mr-0 mr-sm-4 icon-lg"></i>
@@ -62,7 +68,7 @@
                           </div>
                         </div>
                       </div>
-                      </router-link>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -72,15 +78,28 @@
 
 export default {
     name: 'JuniorEnterpriseMenu',
-    props:['nome_ej','nome_nucleo','ies','cluster','id_ej'],
+    props:['menu_option','nome_ej','nome_nucleo','ies','cluster','id_ej'],
     data () {
     return {
       
      
     }
   },
+  methods: {
+    ChooseMenuOption1(event) {
+      this.$emit('selectMenu', 1)
+    },
+    ChooseMenuOption2(event) {
+      this.$emit('selectMenu', 2)
+    },
+    ChooseMenuOption3(event) {
+      this.$emit('selectMenu', 3)
+    }
+
+  },
   components:{
   },
+  
 }
 </script>
 

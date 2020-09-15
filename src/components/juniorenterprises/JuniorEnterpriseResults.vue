@@ -1,8 +1,7 @@
 <template>
 </template>
+
 <script>
-
-
 
 export default {
     name: 'JuniorEnterpriseResults',
@@ -11,12 +10,11 @@ export default {
       data: []
     }
   },
-  components:{
+   components:{
   }
- }
+}
 </script>
 
 <style scoped>
 
 </style>
-

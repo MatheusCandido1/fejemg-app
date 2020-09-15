@@ -7,7 +7,7 @@ import JuniorEnterpriseIndex from '@/pages/juniorenterprise/JuniorEnterpriseInde
 import JuniorEnterpriseAdd from '@/pages/juniorenterprise/JuniorEnterpriseAdd'
 import JuniorEnterpriseDetail from '@/pages/juniorenterprise/JuniorEnterpriseDetail'
 import JuniorEnterpriseEdit from '@/pages/juniorenterprise/JuniorEnterpriseEdit'
-
+import JuniorEnterpriseResults from '@/components/juniorenterprises/JuniorEnterpriseResults'
 import CoreAdd from '@/pages/core/CoreAdd'
 import CoreIndex from '@/pages/core/CoreIndex'
 
@@ -55,9 +55,14 @@ export default new Router({
       component: JuniorEnterpriseEdit
     },
     {
-      path: '/empresa-junior/:id/projetos/add',
+      path: '/empresa-junior/:id/year/:year/projetos/add',
       name: 'ProjectAdd',
       component: ProjectAdd
+    },
+    {
+      path: '/resultados/empresa-junior/:id/year/:year/',
+      name: 'JuniorEnterpriseResults',
+      component: JuniorEnterpriseResults
     },
     {
       path: '/nucleos',
