@@ -6,14 +6,16 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th style="width: 50%" class="text-center">Mês</th>
-                          <th style="width: 50%" class="text-center">Faturamento</th>
+                          <th style="width: 40%" class="text-center">Mês</th>
+                          <th style="width: 40%" class="text-center">Faturamento</th>
+                          <th style="width: 20%" class="text-center">Ver mais</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr v-for="item in data" :key="item.id" style="width: 50%" class="text-center">
+                        <tr v-for="item in data" :key="item.id"  class="text-center">
                           <td style="text-transform: capitalize;">{{item.x}}</td>
                           <td>R$ {{item.y}}</td>
+                          <td><a style="cursor: pointer" class="badge badge-info text-white">+</a></td>
                         </tr>
                       </tbody>
                     </table>
