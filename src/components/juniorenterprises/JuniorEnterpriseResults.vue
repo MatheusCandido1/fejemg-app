@@ -11,10 +11,10 @@
                         </tr>
                       </thead>
                       <tbody>
-                       <!-- <tr v-for="item in data" :key="item.id" style="width: 50%" class="text-center">
-                          <td>{{item.x}}</td>
-                          <td>{{item.y}}</td>
-                        </tr> -->
+                        <tr v-for="item in data" :key="item.id" style="width: 50%" class="text-center">
+                          <td style="text-transform: capitalize;">{{item.x}}</td>
+                          <td>R$ {{item.y}}</td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -29,6 +29,33 @@ export default {
     data () {
     return {
       data: []
+    }
+  },
+  created(){
+    let id = this.$route.params.id
+    let year = this.$route.params.year
+    let usuarioAux = this.$store.getters.getUsuario;
+    if(usuarioAux){
+      this.usuario = this.$store.getters.getUsuario;
+      this.$http.get(this.$urlAPI+`ejs/`+id+`/resultados/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      .then(response => {
+        console.log(response);
+        if(response.status){
+          this.data = response.data.success_data;
+        }
+      })
+      .catch(e => {
+         this.$toast.error({
+            title:'Ops...',
+            message:'Erro interno. Tente novamente mais tarde',
+            position:'bottom right',
+            closeButton: false,
+            progressBar: true,
+            showDuration: 2000,
+            hideDuration: 1000,
+            timeOut: 3000
+            })
+      })
     }
   },
    components:{
