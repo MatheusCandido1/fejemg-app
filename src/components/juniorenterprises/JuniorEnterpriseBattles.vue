@@ -1,6 +1,6 @@
 <template>
 <span>
-    <div class="row">
+    <div class="row" v-if="this.data &&  this.data.length > 0">
  <JuniorEnterpriseStronger   
   :soma_fat="this.data[0].soma_fat"
   :soma_proj="this.data[0].soma_proj"
@@ -50,7 +50,7 @@ export default {
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs/`+id+`/resultados/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`ejs/`+id+`/resultado/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
           this.data = response.data.success_data;

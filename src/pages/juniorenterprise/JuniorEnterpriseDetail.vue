@@ -1,20 +1,18 @@
 <template>
 <AppTemplate>
-<span slot="content">
-  <JuniorEnterpriseMenu v-on:selectMenu="menu_option = $event" :menu_option="this.menu_option" :id_ej="this.data[0].id_ej" :nome_ej="this.data[0].nome_ej" :nome_nucleo="this.data[0].nome_nucleo" :ies="this.data[0].ies" :cluster="this.data[0].cluster"/> 
+<span v-if="this.data &&  this.data.length > 0" slot="content">
+    <JuniorEnterpriseMenu  v-on:selectMenu="menu_option = $event" :menu_option="this.menu_option" :id_ej="this.data[0].id_ej" :nome_ej="this.data[0].nome_ej" :nome_nucleo="this.data[0].nome_nucleo" :ies="this.data[0].ies" :cluster="this.data[0].cluster"/> 
  
  <slot name="battles" v-if="menu_option === 1">
-
- <JuniorEnterpriseBattles/>
+    <JuniorEnterpriseBattles/>
  </slot>
 
   <slot name="results" v-else-if="menu_option === 2">
-    <JuniorEntepriseResults/>
+    <JuniorEnterpriseResults/>
   </slot>
 
   <slot name="projects" v-else-if="menu_option === 3">
 
-    <JuniorEntepriseProjects/>
   </slot>
 
   </span>
@@ -24,7 +22,7 @@
 import AppTemplate from '@/templates/AppTemplate'
 import JuniorEnterpriseBattles from '@/components/juniorenterprises/JuniorEnterpriseBattles'
 import JuniorEnterpriseMenu from '@/components/juniorenterprises/JuniorEnterpriseMenu'
-
+import JuniorEnterpriseResults from '@/components/juniorenterprises/JuniorEnterpriseResults'
 
 export default {
     name: 'JuniorEnterpriseDetail',
@@ -34,13 +32,14 @@ export default {
       menu_option: 1,
     }
   },
-  beforeCreate(){
+  mounted(){
+        this.$parent.startProgress();
     let id = this.$route.params.id
     let year = this.$route.params.year
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs/`+id+`/resultados/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`ejs/`+id+`/resultado/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
           this.data = response.data.success_data;
@@ -59,11 +58,15 @@ export default {
             })
       })
     }
+    this.$parent.stopProgress();
   },
   components:{
     AppTemplate,
     JuniorEnterpriseBattles,
-    JuniorEnterpriseMenu
+    JuniorEnterpriseMenu,
+    JuniorEnterpriseResults
+  },
+  methods: {
   }
 }
 </script>
