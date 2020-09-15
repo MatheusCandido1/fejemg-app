@@ -27,28 +27,27 @@
                       </div>
                     </div>
                     <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
-                      <button @click="ChooseMenuOption1">
+                      <button @click="ChooseMenuOption1" class="text-center">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <i class="mdi mdi-trophy-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
                           <div class="wrapper text-center text-sm-left">
                             <div class="fluid-container">
-                              <h5 class="mb-0 font-weight-medium">Batalhas</h5>
+                              <h5 style="margin-left: -20px" class="mb-0 font-weight-medium">Batalhas</h5>
                             </div>
                           </div>
                         </div>
                       </div>
                       </button>
-                      </router-link>
                     </div>
                    <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
-                      <button @click="ChooseMenuOption2">
+                      <button @click="ChooseMenuOption2" class="text-center">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <i class="mdi mdi-chart-bar text-primary mr-0 mr-sm-4 icon-lg"></i>
                           <div class="wrapper text-center text-sm-left">
                             <div class="fluid-container">
-                              <h5 class="mb-0 font-weight-medium">Resultados</h5>
+                              <h5 style="margin-left: -20px" class="mb-0 font-weight-medium">Resultados</h5>
                             </div>
                           </div>
                         </div>
@@ -57,13 +56,13 @@
 
                     </div>
                     <div class="card-col col-xl-2 col-lg-2 col-md-3 col-6 border-right">
-                            <button @click="ChooseMenuOption3">
+                            <button @click="ChooseMenuOption3" class="text-center">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
                           <i class="mdi mdi-upload text-primary mr-0 mr-sm-4 icon-lg"></i>
                           <div class="wrapper text-center text-sm-left">
                             <div class="fluid-container">
-                              <h5 class="mb-0 font-weight-medium">Atualizar projetos</h5>
+                              <h5 style="margin-left: -20px" class="mb-0  font-weight-medium">Atualizar projetos</h5>
                             </div>
                           </div>
                         </div>
