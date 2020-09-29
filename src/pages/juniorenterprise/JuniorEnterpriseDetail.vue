@@ -12,7 +12,7 @@
   </slot>
 
   <slot name="projects" v-else-if="menu_option === 3">
-
+    <ProjectAdd/>
   </slot>
 
   </span>
@@ -23,6 +23,7 @@ import AppTemplate from '@/templates/AppTemplate'
 import JuniorEnterpriseBattles from '@/components/juniorenterprises/JuniorEnterpriseBattles'
 import JuniorEnterpriseMenu from '@/components/juniorenterprises/JuniorEnterpriseMenu'
 import JuniorEnterpriseResults from '@/components/juniorenterprises/JuniorEnterpriseResults'
+import ProjectAdd from '@/pages/project/ProjectAdd'
 
 export default {
     name: 'JuniorEnterpriseDetail',
@@ -46,6 +47,7 @@ export default {
         }
       })
       .catch(e => {
+        console.log(e);
          this.$toast.error({
             title:'Ops...',
             message:'Erro interno. Tente novamente mais tarde',
@@ -64,7 +66,8 @@ export default {
     AppTemplate,
     JuniorEnterpriseBattles,
     JuniorEnterpriseMenu,
-    JuniorEnterpriseResults
+    JuniorEnterpriseResults,
+    ProjectAdd
   },
   methods: {
   }
