@@ -1,7 +1,7 @@
 <template>
 <AppTemplate>
-  <span slot="content">
-        <CoreMenu /> 
+  <span slot="content" v-if="dataLoaded">
+        <CoreMenu :core_image="this.data.core_image" :core_color="this.data.core_color" /> 
 
   </span>
 </AppTemplate>
@@ -13,22 +13,25 @@ import CoreMenu from '@/components/cores/CoreMenu'
 
 
 export default {
-    name: 'CoreDetails',
+    name: 'CoreDetail',
     data () {
     return {
+        data: [],
+        dataLoaded: false
     }
   },
-  mounted(){
-    this.$parent.startProgress();
+  methods:{
+    getData(){
     let id = this.$route.params.id
     let year = this.$route.params.year
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs/`+id+`/resultado/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`nucleos/`+id+`/resultados/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
-          this.data = response.data.success_data;
+          this.data = response.data.success_data.core;
+          this.dataLoaded = true;
         }
       })
       .catch(e => {
@@ -45,7 +48,10 @@ export default {
             })
       })
     }
-    this.$parent.stopProgress();
+    }
+  },
+  mounted(){
+    this.getData();
   },
   components:{
     AppTemplate,
