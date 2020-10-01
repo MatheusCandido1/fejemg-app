@@ -1,7 +1,15 @@
 <template>
 <AppTemplate>
   <span slot="content" v-if="dataLoaded">
-        <CoreMenu :core_image="this.data.core_image" :core_color="this.data.core_color" /> 
+        <CoreMenu v-on:selectMenu="menu_option = $event" :menu_option="this.menu_option" :core_image="this.data.core_image" :core_color="this.data.core_color" /> 
+
+    <slot name="stronger" v-if="menu_option === 1">
+        <CoreStronger/>
+    </slot>
+
+    <slot name="connected" v-if="menu_option === 2">
+        <CoreConnected/>
+    </slot>
 
   </span>
 </AppTemplate>
@@ -9,7 +17,8 @@
 <script>
 import AppTemplate from '@/templates/AppTemplate'
 import CoreMenu from '@/components/cores/CoreMenu'
-
+import CoreStronger from '@/components/cores/CoreStronger'
+import CoreConnected from '@/components/cores/CoreConnected'
 
 
 export default {
@@ -17,7 +26,8 @@ export default {
     data () {
     return {
         data: [],
-        dataLoaded: false
+        dataLoaded: false,
+        menu_option: 1,
     }
   },
   methods:{
@@ -55,7 +65,9 @@ export default {
   },
   components:{
     AppTemplate,
-    CoreMenu
+    CoreMenu,
+    CoreStronger,
+    CoreConnected
   }
 }
 </script>
