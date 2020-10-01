@@ -68,7 +68,7 @@
                     <div class="card-col col-xl-2 col-lg-2 col-md-2 col-6 border-right">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
-                                                    <a style="cursor: pointer" @click="ChooseMenuOption5">
+                        <a style="cursor: pointer" @click="ChooseMenuOption5">
                           <i class="mdi mdi-earth mr-0 mr-sm-4 icon-lg" :style="{color: core_color}"></i>
                           <div class="wrapper text-center text-sm-left">
                             <div class="fluid-container">
@@ -102,7 +102,7 @@ export default {
     ChooseMenuOption3(event) {
       this.$emit('selectMenu', 3)
     },
-    ChooseMenuOptio4(event) {
+    ChooseMenuOption4(event) {
       this.$emit('selectMenu', 4)
     },
     ChooseMenuOption5(event) {
