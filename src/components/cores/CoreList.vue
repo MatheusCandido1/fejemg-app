@@ -28,7 +28,7 @@
                             <td ><label class="badge badge-success">R$ {{item.fat_nuc}}</label>  </td>
                             <td ><label class="badge badge-info">{{item.fat_proj}}</label>   </td>
                             <td >
-                               <router-link  :to="'nucleo/'+item.id+'/resultados'">
+                               <router-link  :to="'nucleo/'+item.id+'/resultados/2020'">
 <button type="button" class="btn btn-dark btn-icon">
                             <i class="mdi mdi-rocket"></i>
                           </button>

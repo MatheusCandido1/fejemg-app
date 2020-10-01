@@ -76,7 +76,7 @@ export default new Router({
       component: CoreAdd
     },
     {
-      path: '/nucleo/:id/resultados',
+      path: '/nucleo/:id/resultados/:year',
       name: 'CoreDetail',
       component: CoreDetail
     }
