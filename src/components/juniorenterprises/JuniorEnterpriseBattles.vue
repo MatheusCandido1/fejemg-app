@@ -21,7 +21,11 @@
    <JuniorEnterpriseImpact
   :soma_nps="this.data[0].soma_nps"
   :meta_nps="this.data[0].meta_nps"
-  :porc_nps="this.data[0].porc_nps"/>
+  :porc_nps="this.data[0].porc_nps"
+  :soma_impacto="this.data[0].soma_impacto"
+  :meta_impacto="this.data[0].meta_impacto"
+  :porc_impacto="this.data[0].porc_impacto"
+  />
   <JuniorEnterpriseBillingChart/>
   <JuniorEnterpriseProjectChart/>
     </div>

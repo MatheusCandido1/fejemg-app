@@ -49,9 +49,12 @@ export default {
   },
   mounted(){
      let usuarioAux = this.$store.getters.getUsuario;
+     
+    let id = this.$route.params.id
+    let year = this.$route.params.year
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs/1/projetos/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`ejs/`+id+`/projetos/`+year+``, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
          this.series = [{ 
             name: 'Meta',

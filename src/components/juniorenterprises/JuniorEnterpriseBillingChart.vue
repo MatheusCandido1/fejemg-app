@@ -53,10 +53,13 @@ export default {
   },
   mounted(){
      let usuarioAux = this.$store.getters.getUsuario;
+     let id = this.$route.params.id
+    let year = this.$route.params.year
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs/1/faturamento/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`ejs/`+id+`/faturamento/`+year+``, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
+        console.log(response.data.meta)
          this.series = [{ 
             name: 'Meta',
             data: response.data.meta

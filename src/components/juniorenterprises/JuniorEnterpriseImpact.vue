@@ -26,11 +26,11 @@
                     <div class="template-demo">
                           <h4>Projetos de Impacto</h4>
                       <div class="d-flex justify-content-between">
-                        <small>10</small>
-                        <small>20 </small>
+                        <small>{{soma_impacto}}</small>
+                        <small>{{meta_impacto}}</small>
                       </div>
                       <div class="progress progress-lg mt-2">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"  aria-valuemin="0" aria-valuemax="100">0.00%</div>
+                        <div  :class="getLight(porc_impacto)" role="progressbar" :style="{ 'width': porc_impacto+'%'}"  aria-valuemin="0" aria-valuemax="100">{{Math.min(porc_impacto).toFixed(2)}}%</div>
                       </div>
                     </div>
                   </div>
@@ -41,7 +41,7 @@
 
 export default {
     name: 'JuniorEnterpriseImpact',
-    props:['meta_nps','soma_nps','porc_nps'],
+    props:['meta_nps','soma_nps','porc_nps','soma_impacto','meta_impacto','porc_impacto'],
     data () {
     return {
      
