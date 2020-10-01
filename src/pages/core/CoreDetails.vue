@@ -1,36 +1,21 @@
 <template>
 <AppTemplate>
-<span v-if="this.data &&  this.data.length > 0" slot="content">
-    <JuniorEnterpriseMenu  v-on:selectMenu="menu_option = $event" :menu_option="this.menu_option" :id_ej="this.data[0].id_ej" :nome_ej="this.data[0].nome_ej" :nome_nucleo="this.data[0].nome_nucleo" :ies="this.data[0].ies" :cluster="this.data[0].cluster"/> 
- 
- <slot name="battles" v-if="menu_option === 1">
-    <JuniorEnterpriseBattles/>
- </slot>
-
-  <slot name="results" v-else-if="menu_option === 2">
-    <JuniorEnterpriseResults/>
-  </slot>
-
-  <slot name="projects" v-else-if="menu_option === 3">
-    <ProjectAdd/>
-  </slot>
+  <span slot="content">
+        <CoreMenu /> 
 
   </span>
 </AppTemplate>
 </template>
 <script>
 import AppTemplate from '@/templates/AppTemplate'
-import JuniorEnterpriseBattles from '@/components/juniorenterprises/JuniorEnterpriseBattles'
-import JuniorEnterpriseMenu from '@/components/juniorenterprises/JuniorEnterpriseMenu'
-import JuniorEnterpriseResults from '@/components/juniorenterprises/JuniorEnterpriseResults'
-import ProjectAdd from '@/pages/project/ProjectAdd'
+import CoreMenu from '@/components/cores/CoreMenu'
+
+
 
 export default {
-    name: 'JuniorEnterpriseDetail',
+    name: 'CoreDetails',
     data () {
     return {
-      data: [],
-      menu_option: 1,
     }
   },
   mounted(){
@@ -64,12 +49,7 @@ export default {
   },
   components:{
     AppTemplate,
-    JuniorEnterpriseBattles,
-    JuniorEnterpriseMenu,
-    JuniorEnterpriseResults,
-    ProjectAdd
-  },
-  methods: {
+    CoreMenu
   }
 }
 </script>

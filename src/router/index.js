@@ -10,6 +10,7 @@ import JuniorEnterpriseEdit from '@/pages/juniorenterprise/JuniorEnterpriseEdit'
 import JuniorEnterpriseResults from '@/components/juniorenterprises/JuniorEnterpriseResults'
 import CoreAdd from '@/pages/core/CoreAdd'
 import CoreIndex from '@/pages/core/CoreIndex'
+import CoreDetails from '@/pages/core/CoreDetails'
 
 import ProjectAdd from '@/pages/project/ProjectAdd'
 
@@ -73,6 +74,11 @@ export default new Router({
       path: '/nucleos/add',
       name: 'CoreAdd',
       component: CoreAdd
+    },
+    {
+      path: '/nucleo/:id/resultados',
+      name: 'CoreDetails',
+      component: CoreDetails
     }
   ]
 })
