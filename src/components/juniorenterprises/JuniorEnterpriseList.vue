@@ -1,5 +1,5 @@
 <template>
-<div class="col-lg-12 grid-margin stretch-card">
+<div class="col-lg-12 grid-margin stretch-card" v-if="dataLoaded">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Empresas Juniores</h4>
@@ -57,25 +57,32 @@ export default {
     name: 'JuniorEnterpriseList',
     data () {
     return {
-      ejs: []
+      ejs: [],
+      dataLoaded: false,
     }
   },
-  created(){
-    let usuarioAux = this.$store.getters.getUsuario;
-    if(usuarioAux){
-      this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`ejs`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
-      .then(response => {
-        if(response.status){
-          this.ejs = response.data.success_data;
-        }
-      })
-      .catch(e => {
-        console.log(e)
-        alert("Erro! Tente novamente mais tarde!");
-      })
+  methods: {
+     getData(){
+        let usuarioAux = this.$store.getters.getUsuario;
+      if(usuarioAux){
+        this.usuario = this.$store.getters.getUsuario;
+        this.$http.get(this.$urlAPI+`ejs`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+        .then(response => {
+          if(response.status){
+            this.ejs = response.data.success_data;
+            this.dataLoaded = true;
+          }
+        })
+        .catch(e => {
+          console.log(e)
+          alert("Erro! Tente novamente mais tarde!");
+        })
 
-    }
+      }
+      }
+  },
+  mounted(){
+    this.getData();
   },
   components:{
   },

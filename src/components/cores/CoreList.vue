@@ -52,8 +52,8 @@ export default {
       dataLoaded: false,
     }
   },
-  methods() {
-    function getData() {
+  methods: {
+    getData() {
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
@@ -63,7 +63,6 @@ export default {
           this.cores = response.data.success_data;
           this.dataLoaded = true;
         }
-
       })
       .catch(e => {
         console.log(e)
