@@ -11,7 +11,7 @@
                           </div>
                           </div>
                           <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 col-xl-12 text-center">
                       <CoreMandalaChart />
                           </div>
                           </div>

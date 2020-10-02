@@ -1,9 +1,9 @@
 <template>
 <div class="col-lg-12 col-xl-12 col-md-12 grid-margin stretch-card">
     <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Mandala do Núcleo</h4>
-        <apexchart type="radar" height="600" width="600" :options="chartOptions" :series="series"></apexchart>
+        <div class="card-body">            
+          <h4 class="card-title">Mandala</h4>
+        <apexchart style="margin-top: -100px; margin-left: 100px;" type="radar" height="600" width="600" :options="chartOptions" :series="series"></apexchart>
         </div>
     </div>
 </div>
@@ -22,12 +22,19 @@ export default {
             data: [2.8, 3, 4.7, 3.3, 2.4, 4.9, 4.5, 3.4, 5, 4, 4, 3],
           }],
           chartOptions: {
+            id: 'vuechart-example',
             chart: {
               type: 'radar',
+              toolbar: {
+              show: false
+              },
             },
+            
+            
             xaxis: {
               categories: ['Gestão do time', 'Estilo de Liderança', 'Empoderamento de Time', 'Nivel de Consciência', 'Motivação Interna', 'Consciência Organizacional','Relação com Partes Interessadas','Geração de Valor','Estrutura Organizacional','Sustentabilidade Fin.','Funcionamento do Time','Tomada de Decisão']
-            }
+            },
+            
           }
       }
          
