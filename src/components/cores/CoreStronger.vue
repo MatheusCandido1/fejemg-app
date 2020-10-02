@@ -1,5 +1,5 @@
 <template>
-      <div class="col-12 grid-margin stretch-card">
+      <div class="grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                       <div class="row">
@@ -10,10 +10,10 @@
                       <CoreProjectChart />
                           </div>
                           </div>
-                          <div class="row">
-                        <div class="col-lg-12 col-xl-12 text-center">
-                      <CoreMandalaChart />
-                          </div>
+                          <div class="row" style="margin-top: -100px">
+                            <div class="col-lg-12 text-center">
+                              <CoreMandalaChart />
+                            </div>
                           </div>
                   </div>
                 </div>
