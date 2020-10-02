@@ -10,6 +10,11 @@
                       <CoreProjectChart />
                           </div>
                           </div>
+                          <div class="row">
+                        <div class="col-lg-12">
+                      <CoreMandalaChart />
+                          </div>
+                          </div>
                   </div>
                 </div>
               </div>
@@ -17,6 +22,8 @@
 <script>
 import CoreBillingChart from '../cores/CoreBillingChart';
 import CoreProjectChart from '../cores/CoreProjectChart';
+import CoreMandalaChart from '../cores/CoreMandalaChart';
+
 export default {
     name: 'CoreStronger',
     data () {
@@ -26,7 +33,8 @@ export default {
   },
   components:{
     CoreBillingChart,
-    CoreProjectChart
+    CoreProjectChart,
+    CoreMandalaChart
   },
 }
 </script>
