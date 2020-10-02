@@ -1,5 +1,5 @@
 <template>
-<span>
+<span v-if="dataLoaded">
   <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Núcleos</h4>
@@ -48,10 +48,12 @@ export default {
     name: 'CoreList',
     data () {
     return {
-      cores: []
+      cores: [],
+      dataLoaded: false,
     }
   },
-  created(){
+  methods() {
+    function getData() {
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
@@ -59,9 +61,7 @@ export default {
       .then(response => {
         if(response.status){
           this.cores = response.data.success_data;
-          console.log(this.cores[0].name_nuc)
-          console.log(this.cores[0].fat_nuc)
-          console.log(this.cores[0].fat_proj)
+          this.dataLoaded = true;
         }
 
       })
@@ -69,8 +69,11 @@ export default {
         console.log(e)
         alert("Erro! Tente novamente mais tarde!");
       })
-
     }
+    }
+  },
+  mounted(){
+    this.getData();
   },
   components:{
   },
