@@ -17,7 +17,8 @@
   :porc_con="this.data[0].porc_con"
   :soma_eve="this.data[0].soma_eve"
   :meta_eve="this.data[0].meta_eve"
-  :porc_eve="this.data[0].porc_eve"/>
+  :porc_eve="this.data[0].porc_eve"
+  :is_ac="this.ac" />
    <JuniorEnterpriseImpact
   :soma_nps="this.data[0].soma_nps"
   :meta_nps="this.data[0].meta_nps"
@@ -45,10 +46,11 @@ export default {
     name: 'JuniorEnterpriseBattles',
     data () {
     return {
-      data: []
+      data: [],
+      ac: false
     }
   },
-  beforeCreate(){
+  mounted(){
     let id = this.$route.params.id
     let year = this.$route.params.year
     let usuarioAux = this.$store.getters.getUsuario;
@@ -58,6 +60,12 @@ export default {
       .then(response => {
         if(response.status){
           this.data = response.data.success_data;
+        }
+        
+        if(this.data[0].porc_fat >= 100 && this.data[0].porc_proj >= 100 && this.data[0].porc_mem >= 100 ){
+          this.ac = true;
+        } else {
+          this.ac = false;
         }
       })
       .catch(e => {
@@ -73,6 +81,7 @@ export default {
             })
       })
     }
+
   },
   components:{
     JuniorEnterpriseStronger,

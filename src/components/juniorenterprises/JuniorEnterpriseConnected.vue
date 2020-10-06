@@ -7,8 +7,8 @@
                       </div>
                       <td class="pl-0"><h5 class="mb-0 font-weight-medium">Conectado</h5></td>
                                             <div class="wrapper ml-auto action-bar">
+                          <div v-if="Math.min(this.porc_eve,this.porc_con) == 0" :class="getClass(Math.min(this.porc_eve,this.porc_con))">0%</div>
                           <div v-if="Math.min(this.porc_eve,this.porc_con)" :class="getClass(Math.min(this.porc_eve,this.porc_con))">{{Math.min(this.porc_con,this.porc_eve).toFixed(2)}}%</div>
-                           <div v-if="Math.min(this.porc_eve,this.porc_con) == 0" :class="getClass(Math.min(this.porc_eve,this.porc_con))">0%</div>
                       </div>
                     </div>
                   </div>
@@ -41,10 +41,9 @@
 
 export default {
     name: 'JuniorEnterpriseConneceted',
-    props:['meta_con','soma_con','porc_con', 'soma_eve', 'meta_eve', 'porc_eve'],
+    props:['meta_con','soma_con','porc_con', 'soma_eve', 'meta_eve', 'porc_eve','is_ac'],
     data () {
     return {
-     
     }
   },
   components:{
@@ -62,14 +61,23 @@ export default {
       }
       if(x >= 100)
       {
+        if(this.is_ac)
         return "badge badge-pill badge-info"
+
+        return "badge badge-pill badge-success"
+
+
       }
     },
     getLight(y){
       if(y >= 100)
       {
         if(Math.min(this.porc_con,this.porc_eve) >= 100){
+          if(this.is_ac){
         return "progress-bar bg-info"
+          } else {
+          return "progress-bar bg-success"
+          }
         }
         else{
         return "progress-bar bg-success"
@@ -84,11 +92,15 @@ export default {
       }if(y < (5 * 8.333333)){
         return "progress-bar bg-danger"
       }
+
     },
     getHeader(z){
       if(z >= 100)
       {
+        if(this.is_ac)
         return true
+
+        return false
       }
         return false
     }

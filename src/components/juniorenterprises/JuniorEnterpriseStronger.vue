@@ -102,6 +102,7 @@ export default {
     getHeader(z){
       if(z >= 100)
       {
+        this.$emit('AC', 1)
         return true
       }
         return false

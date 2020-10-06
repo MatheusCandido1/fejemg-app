@@ -59,7 +59,6 @@ export default {
       this.usuario = this.$store.getters.getUsuario;
       this.$http.get(this.$urlAPI+`ejs/`+id+`/faturamento/`+year+``, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
-        console.log(response.data.meta)
          this.series = [{ 
             name: 'Meta',
             data: response.data.meta

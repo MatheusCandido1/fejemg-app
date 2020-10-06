@@ -1,14 +1,14 @@
 <template>
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
                 <div class="card card-statistics social-card card-default">
-                  <div v-bind:style="getHeader(Math.min(this.porc_nps)) ? 'background-color: #198ae3; color: white' : ''"   class="card-header header-sm">
+                  <div v-bind:style="getHeader(Math.min(this.porc_nps, this.porc_impacto)) ? 'background-color: #198ae3; color: white' : ''"   class="card-header header-sm">
                     <div class="d-flex align-items-center">
                       <div class="wrapper d-flex align-items-center media-info text-twitter">
                       </div>
                       <td class="pl-0"><h5 class="mb-0 font-weight-medium">Impacto</h5></td>
                                             <div class="wrapper ml-auto action-bar">
-                          <div v-if="Math.min(this.porc_nps)" :class="getClass(Math.min(this.porc_nps))">{{Math.min(this.porc_nps).toFixed(2)}}%</div>
-                           <div v-if="Math.min(this.porc_nps) == 0" :class="getClass(Math.min(this.porc_nps))">0%</div>
+                                                   <div v-if="Math.min(this.porc_nps, this.porc_impacto) == 0" :class="getClass(Math.min(this.porc_nps, this.porc_impacto))">0%</div>
+                          <div v-if="Math.min(this.porc_nps, this.porc_impacto)" :class="getClass(Math.min(this.porc_nps, this.porc_impacto))">{{Math.min(this.porc_nps, this.porc_impacto).toFixed(2)}}%</div>
                       </div>
                     </div>
                   </div>
@@ -68,7 +68,7 @@ export default {
     getLight(y){
       if(y >= 100)
       {
-        if(Math.min(this.porc_nps) >= 100){
+        if(Math.min(this.porc_nps, this.porc_impacto) >= 100){
         return "progress-bar bg-info"
         }
         else{
