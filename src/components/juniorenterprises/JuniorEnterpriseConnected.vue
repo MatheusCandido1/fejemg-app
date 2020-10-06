@@ -50,13 +50,17 @@ export default {
   },
   methods: {
     getClass(x){
-      if(x >= (6 * 8.333333) && x < 100)
+      
+      var d = new Date();
+      var n = d.getMonth();
+
+      if(x >= ((n+1)  * 8.333333) && x < 100)
       {
         return "badge badge-pill badge-success"
       }
-      if (x >= (5 * 8.333333) && x < (6 * 8.333333)){ 
+      if (x >= (n * 8.333333) && x < ((n+1)  * 8.333333)){ 
         return "badge badge-pill badge-warning"
-      }if(x < (5 * 8.333333)){
+      }if(x < (n * 8.333333)){
         return "badge badge-pill badge-danger"
       }
       if(x >= 100)
@@ -70,6 +74,10 @@ export default {
       }
     },
     getLight(y){
+      
+      var d = new Date();
+      var n = d.getMonth();
+
       if(y >= 100)
       {
         if(Math.min(this.porc_con,this.porc_eve) >= 100){
@@ -83,13 +91,13 @@ export default {
         return "progress-bar bg-success"
         }
       }
-      if(y >= (6 * 8.333333) && y < 100)
+      if(y >= ((n+1) * 8.333333) && y < 100)
       {
         return "progress-bar bg-success"
       }
-      if (y >= (5 * 8.333333) && y < (6 * 8.333333)){ 
+      if (y >= (n * 8.333333) && y < ((n+1)  * 8.333333)){ 
         return "progress-bar bg-warning"
-      }if(y < (5 * 8.333333)){
+      }if(y < (n * 8.333333)){
         return "progress-bar bg-danger"
       }
 

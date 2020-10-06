@@ -48,8 +48,7 @@ export default {
    apexcharts: VueApexCharts,
   },
   mounted(){
-     let usuarioAux = this.$store.getters.getUsuario;
-     
+    let usuarioAux = this.$store.getters.getUsuario; 
     let id = this.$route.params.id
     let year = this.$route.params.year
     if(usuarioAux){
