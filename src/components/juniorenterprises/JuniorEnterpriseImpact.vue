@@ -41,7 +41,7 @@
 
 export default {
     name: 'JuniorEnterpriseImpact',
-    props:['meta_nps','soma_nps','porc_nps','soma_impacto','meta_impacto','porc_impacto'],
+    props:['meta_nps','soma_nps','porc_nps','soma_impacto','meta_impacto','porc_impacto', 'is_connected'],
     data () {
     return {
      
@@ -62,14 +62,21 @@ export default {
       }
       if(x >= 100)
       {
+        if(this.is_connected)
         return "badge badge-pill badge-info"
+
+        return "badge badge-pill badge-success"
       }
     },
     getLight(y){
       if(y >= 100)
       {
         if(Math.min(this.porc_nps, this.porc_impacto) >= 100){
+          if(this.is_connected)
         return "progress-bar bg-info"
+
+        
+        return "progress-bar bg-success"
         }
         else{
         return "progress-bar bg-success"
@@ -88,7 +95,10 @@ export default {
     getHeader(z){
       if(z >= 100)
       {
+        if(this.is_connected)
         return true
+
+        return false
       }
         return false
     }

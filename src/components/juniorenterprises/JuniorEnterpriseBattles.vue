@@ -26,6 +26,7 @@
   :soma_impacto="this.data[0].soma_impacto"
   :meta_impacto="this.data[0].meta_impacto"
   :porc_impacto="this.data[0].porc_impacto"
+  :is_connected="this.connected"
   />
   <JuniorEnterpriseBillingChart/>
   <JuniorEnterpriseProjectChart/>
@@ -47,7 +48,8 @@ export default {
     data () {
     return {
       data: [],
-      ac: false
+      ac: false,
+      connected: false,
     }
   },
   mounted(){
@@ -64,9 +66,10 @@ export default {
         
         if(this.data[0].porc_fat >= 100 && this.data[0].porc_proj >= 100 && this.data[0].porc_mem >= 100 ){
           this.ac = true;
-        } else {
-          this.ac = false;
-        }
+          if(this.data[0].porc_con >= 100 && this.data[0].porc_eve >= 100){
+            this.connected = true
+          }
+        } 
       })
       .catch(e => {
          this.$toast.error({

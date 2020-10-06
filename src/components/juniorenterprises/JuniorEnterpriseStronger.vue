@@ -60,9 +60,6 @@ export default {
   },
   components:{
   },
-  mounted(){
-    
-  },
   methods: {
     getClass(x){
       if(x >= (6 * 8.333333) && x < 100)
@@ -102,7 +99,6 @@ export default {
     getHeader(z){
       if(z >= 100)
       {
-        this.$emit('AC', 1)
         return true
       }
         return false
