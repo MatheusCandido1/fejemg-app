@@ -16,7 +16,7 @@ export default {
       return {
            series: [{
             name: 'Meta',
-            data: [5, 5, 5, 5, 5, 5,5,5,5,5,5,5],
+            data: [5,5,5,5,5,5,5,5,5,5,5,5],
           }, {
             name: 'Resultado',
             data: [2.8, 3, 4.7, 3.3, 2.4, 4.9, 4.5, 3.4, 5, 4, 4, 3],
