@@ -19,7 +19,6 @@ export default {
               type: 'bar',
               height: 350,
               stacked: true,
-              stackType: '100%',
               toolbar: {
             show: false
             }
@@ -53,18 +52,18 @@ export default {
               offsetX: 40
             }
           },
-        series: [{
+          series: [{
             name: 'Alto Crescimento',
-            data: [44, 55, 41, 37, 22, 43, 21]
+            data: []
           }, {
             name: 'Farol Verde',
-            data: [53, 32, 33, 52, 13, 43, 32]
+            data: []
           }, {
             name: 'Farol Amarelo',
-            data: [12, 17, 11, 9, 15, 11, 20]
+            data: []
           }, {
             name: 'Farol Vermelho',
-            data: [9, 7, 5, 8, 6, 9, 4]
+            data: []
           }],
     }
   },
@@ -72,6 +71,28 @@ export default {
    apexcharts: VueApexCharts,
   },
   mounted(){
+    let usuarioAux = this.$store.getters.getUsuario;
+     let id = this.$route.params.id
+    let year = this.$route.params.year
+    if(usuarioAux){
+      this.usuario = this.$store.getters.getUsuario;
+      this.$http.get(this.$urlAPI+`nucleos/`+id+`/cluster/`+year+``, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      .then(response => {
+         this.series = [{
+            name: 'Alto Crescimento',
+            data: response.data.success_data.ac
+            }, {
+            name: 'Farol Verde',
+            data: response.data.success_data.green
+            },{
+            name: 'Farol Amarelo',
+            data: response.data.success_data.yellow
+            },{
+            name: 'Farol Vermelho',
+            data: response.data.success_data.red
+            },]; 
+      })
+    }
   },
   methods: {
   }
