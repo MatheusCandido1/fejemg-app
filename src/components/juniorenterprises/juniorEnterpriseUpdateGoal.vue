@@ -13,21 +13,25 @@
     
 <div class="form-row">
   
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <label for="">Cluster</label>
       <input type="number" min="1" max="5" v-model="goal.cluster" class="form-control" >
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <label for="">% de Membros atual</label>
       <input type="text" class="form-control" v-model="goal.members_performing" placeholder="Digite somente números">
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <label for="">NPS atual</label>
       <input type="text" class="form-control" v-model="goal.nps" placeholder="Digite somente números">
     </div>
-    <div class="form-group col-md-3">
-      <label for="">Projetos de impacto atual</label>
+    <div class="form-group col-md-2">
+      <label for="">Proj. impacto atual</label>
       <input type="text" class="form-control" v-model="goal.current_impact_projects" placeholder="Digite somente números">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="">% em eventos atual</label>
+      <input type="text" class="form-control" v-model="goal.current_members_events" placeholder="Digite somente números">
     </div>
   </div>
     <hr class="my-1">
