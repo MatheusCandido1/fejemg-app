@@ -162,9 +162,10 @@ export default {
             })
           this.$router.back();
         }else if(response.data.status == false && response.data.validacao){
+          console.log(response.data.status);
             this.$toast.error({
             title:'Ops...',
-            message:'Verifique os dados',
+            message:response.data.validacao,
             position:'bottom right',
             closeButton: false,
             progressBar: true,
