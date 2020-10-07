@@ -117,6 +117,9 @@ export default {
   },
   created()
   {
+    
+    let id = this.$route.params.id
+    let year = this.$route.params.year
     this.loadServices()
   },
   methods:{
@@ -160,7 +163,8 @@ export default {
             hideDuration: 1000,
             timeOut: 3000
             })
-          this.$router.back();
+                window.location.reload()
+
         }else if(response.data.status == false && response.data.validacao){
           console.log(response.data.status);
             this.$toast.error({

@@ -13,17 +13,21 @@
     
 <div class="form-row">
   
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label for="">Cluster</label>
       <input type="number" min="1" max="5" v-model="goal.cluster" class="form-control" >
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label for="">% de Membros atual</label>
       <input type="text" class="form-control" v-model="goal.members_performing" placeholder="Digite somente números">
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label for="">NPS atual</label>
       <input type="text" class="form-control" v-model="goal.nps" placeholder="Digite somente números">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="">Projetos de impacto atual</label>
+      <input type="text" class="form-control" v-model="goal.current_impact_projects" placeholder="Digite somente números">
     </div>
   </div>
     <hr class="my-1">
@@ -61,7 +65,7 @@
     </div>
     <div class="form-group col-md-6">
       <label for="">Projetos de Impacto</label>
-      <input type="number" class="form-control"  placeholder="Digite somente números">
+      <input type="number" class="form-control" v-model="goal.impact_projects"  placeholder="Digite somente números">
     </div>
   </div>
 
@@ -88,6 +92,7 @@ export default {
           members_events: '',
           nps:'',
           impact_projects:'',
+          current_impact_projects: '',
           meta_nps:'',
           members_performing_goal: '',
           current_nps: '',
