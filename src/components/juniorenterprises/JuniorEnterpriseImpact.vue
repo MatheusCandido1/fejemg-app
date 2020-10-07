@@ -14,7 +14,7 @@
                   </div>
                   <div class="card-body">
                       <div class="template-demo">
-                          <h4>NPS: {{meta_nps}}</h4>
+                          <h4>NPS</h4>
                       <div class="d-flex justify-content-between">
                         <small>{{soma_nps}}</small>
                         <small>{{meta_nps}} </small>
