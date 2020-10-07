@@ -13,25 +13,31 @@
     
 <div class="form-row">
   
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-4">
       <label for="">Cluster</label>
       <input type="number" min="1" max="5" v-model="goal.cluster" class="form-control" >
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-4">
       <label for="">% de Membros atual</label>
       <input type="text" class="form-control" v-model="goal.members_performing" placeholder="Digite somente números">
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-4">
       <label for="">NPS atual</label>
       <input type="text" class="form-control" v-model="goal.nps" placeholder="Digite somente números">
     </div>
-    <div class="form-group col-md-2">
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-4">
       <label for="">Proj. impacto atual</label>
       <input type="text" class="form-control" v-model="goal.current_impact_projects" placeholder="Digite somente números">
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-4">
       <label for="">% em eventos atual</label>
       <input type="text" class="form-control" v-model="goal.current_members_events" placeholder="Digite somente números">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="">Ações compartilhadas atual</label>
+      <input type="text" class="form-control" v-model="goal.current_shared_actions" placeholder="Digite somente números">
     </div>
   </div>
     <hr class="my-1">
@@ -100,7 +106,8 @@ export default {
           meta_nps:'',
           members_performing_goal: '',
           current_nps: '',
-          current_members_events: ''
+          current_members_events: '',
+          current_shared_actions: '',
         }
     }
   },
@@ -153,7 +160,8 @@ export default {
           meta_nps:this.goal.meta_nps,
           members_performing_goal: this.goal.members_performing_goal,
           current_nps: this.goal.current_nps,
-          current_members_events: this.goal.current_members_events
+          current_members_events: this.goal.current_members_events,
+          current_shared_actions: this.goal.current_shared_actions
       },{"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
          if(response.data.success_data){
