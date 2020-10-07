@@ -174,7 +174,6 @@ export default {
             })
         }
       }).catch(e => {
-        console.log(e.response)
         this.$toast.error({
             title:'Ops...',
             message:'Erro interno. Tente novamente mais tarde',
