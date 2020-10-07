@@ -50,6 +50,12 @@
                 </div>
               </div>
               </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <CoreClusterLightChart/>
+                </div>
+
+                </div>
               
                 </div>
               </div>
@@ -58,6 +64,9 @@
     </span>
 </template>
 <script>
+
+import CoreClusterLightChart from '../cores/CoreClusterLightChart';
+
 export default {
     name: 'CoreLeaders',
     data () {
@@ -95,6 +104,7 @@ export default {
 
   },
   components:{
+    CoreClusterLightChart
   },
 }
 </script>
