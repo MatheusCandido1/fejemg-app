@@ -27,8 +27,8 @@
     </div>
     </div>
     <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="">Proj. impacto atual</label>
+      <div class="form-group col-md-4">
+      <label for="">Projetos de impacto atual</label>
       <input type="text" class="form-control" v-model="goal.current_impact_projects" placeholder="Digite somente números">
     </div>
     <div class="form-group col-md-4">
@@ -160,6 +160,7 @@ export default {
           meta_nps:this.goal.meta_nps,
           members_performing_goal: this.goal.members_performing_goal,
           current_nps: this.goal.current_nps,
+          current_impact_projects: this.goal.current_impact_projects,
           current_members_events: this.goal.current_members_events,
           current_shared_actions: this.goal.current_shared_actions
       },{"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
@@ -175,6 +176,7 @@ export default {
             hideDuration: 1000,
             timeOut: 3000
             })
+            console.log(response.data.success_data);
           this.$router.push('/empresas-juniores');
         }else if(response.data.status == false && response.data.validacao){
             this.$toast.error({
