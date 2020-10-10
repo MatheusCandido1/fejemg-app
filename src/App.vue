@@ -4,7 +4,7 @@
           <loading :active.sync="isLoading" 
         :can-cancel="false"
         loader="dots"
-        color="blue"
+        color="#eb003c"
         :is-full-page="fullPage"></loading>
           </div>
 </template>
