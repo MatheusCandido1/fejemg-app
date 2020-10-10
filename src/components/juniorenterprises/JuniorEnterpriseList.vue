@@ -93,7 +93,6 @@ export default {
             this.ejs = response.data.success_data;
             this.dataLoaded = true;
           }
-          console.log(this.ejs);
         })
         .catch(e => {
           console.log(e)
