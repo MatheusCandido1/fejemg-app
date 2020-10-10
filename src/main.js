@@ -51,6 +51,7 @@ var store = {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  vuetify: new Vuetify(),
   store: new Vuex.Store(store),
   router,
   template: '<App/>',
