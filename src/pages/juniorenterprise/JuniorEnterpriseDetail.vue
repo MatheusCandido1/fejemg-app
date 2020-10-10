@@ -1,7 +1,7 @@
 <template>
 <AppTemplate>
 <span v-if="this.data &&  this.data.length > 0" slot="content">
-    <JuniorEnterpriseMenu  v-on:selectMenu="menu_option = $event" :menu_option="this.menu_option" :id_ej="this.data[0].id_ej" :nome_ej="this.data[0].nome_ej" :nome_nucleo="this.data[0].nome_nucleo" :ies="this.data[0].ies" :cluster="this.data[0].cluster"/> 
+    <JuniorEnterpriseMenu  v-on:selectMenu="menu_option = $event" :menu_option="this.menu_option" :id_ej="this.data[0].id_ej" :nome_ej="this.data[0].nome_ej" :cor_nucleo="this.data[0].core_color" :nome_nucleo="this.data[0].nome_nucleo" :ies="this.data[0].ies" :cluster="this.data[0].cluster"/> 
  
  <slot name="battles" v-if="menu_option === 1">
     <JuniorEnterpriseBattles/>

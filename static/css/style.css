@@ -13078,7 +13078,7 @@ dl {
             font-size: 1.125rem;
             line-height: 1;
             margin-left: auto;
-            color: #c80838; }
+            color: #eb003c; }
             .rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
               margin-left: 0;
               margin-right: auto; }
@@ -13089,7 +13089,7 @@ dl {
             line-height: 1;
             font-size: 1.125rem;
             margin-left: auto;
-            color: #c80838; }
+            color: #eb003c; }
             .rtl .sidebar .nav .nav-item .nav-link i.menu-arrow {
               margin-left: 0;
               margin-right: auto; }
@@ -13119,7 +13119,7 @@ dl {
           color: #3e4b5b;
           font-family: "ubuntu-medium", sans-serif; }
         .sidebar .nav .nav-item.active > .nav-link i {
-          color: #c80838; }
+          color: #eb003c; }
       .sidebar .nav .nav-item:hover {
         background: #fcfcfc; }
       .sidebar .nav .nav-item.nav-profile .nav-link {

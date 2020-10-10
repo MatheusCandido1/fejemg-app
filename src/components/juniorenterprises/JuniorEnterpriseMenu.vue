@@ -11,7 +11,7 @@
                               <h5 class="mb-0 font-weight-medium">{{nome_ej}}</h5>
                               <tr>
                             <td>
-                              <label class="badge badge-danger badge-pill">{{nome_nucleo}}</label>
+                              <label class="badge badge-pill text-white"  :style="{ 'background-color': cor_nucleo }">{{nome_nucleo}}</label>
                             </td>
                             <td>
                               <label class="badge badge-warning badge-pill">{{ies}}</label>
@@ -77,7 +77,7 @@
 
 export default {
     name: 'JuniorEnterpriseMenu',
-    props:['menu_option','nome_ej','nome_nucleo','ies','cluster','id_ej'],
+    props:['menu_option','cor_nucleo','nome_ej','nome_nucleo','ies','cluster','id_ej'],
     data () {
     return {
       
