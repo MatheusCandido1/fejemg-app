@@ -48,12 +48,12 @@
   
     <template v-slot:[`item.controls`]="{ item }">
    <router-link :to="'empresa-junior/'+item.id+'/meta/'+new Date().getFullYear()+''">
-<button type="button" class="btn btn-dark btn-icon">
+<button style="border-radius: 50%" type="button" class="btn btn-dark btn-icon">
                             <i class="mdi mdi-chart-line"></i>
                           </button>
                             </router-link>
                             <router-link  :to="'empresa-junior/edit/'+item.id">
-<button type="button" class="btn btn-info btn-icon">
+<button style="border-radius: 50%" type="button" class="btn btn-info btn-icon">
                             <i class="mdi mdi-circle-edit-outline"></i>
                           </button>
                             </router-link>
