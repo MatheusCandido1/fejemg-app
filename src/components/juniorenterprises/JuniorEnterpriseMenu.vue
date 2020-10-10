@@ -30,7 +30,7 @@
                       <button @click="ChooseMenuOption1" class="text-center">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
-                          <i class="mdi mdi-trophy-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <i :style="{ 'color': cor_nucleo }" class="mdi mdi-trophy-outline  mr-0 mr-sm-4 icon-lg"></i>
                           <div class="wrapper text-center text-sm-left">
                             <div class="fluid-container">
                               <h5 style="margin-left: -20px" class="mb-0 font-weight-medium">Batalhas</h5>
@@ -44,7 +44,7 @@
                       <button @click="ChooseMenuOption2" class="text-center">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
-                          <i class="mdi mdi-chart-bar text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <i :style="{ 'color': cor_nucleo }" class="mdi mdi-chart-bar mr-0 mr-sm-4 icon-lg"></i>
                           <div class="wrapper text-center text-sm-left">
                             <div class="fluid-container">
                               <h5 style="margin-left: -20px" class="mb-0 font-weight-medium">Resultados</h5>
@@ -59,7 +59,7 @@
                             <button @click="ChooseMenuOption3" class="text-center">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
-                          <i class="mdi mdi-upload text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <i :style="{ 'color': cor_nucleo }" class="mdi mdi-upload  mr-0 mr-sm-4 icon-lg"></i>
                           <div class="wrapper text-center text-sm-left">
                             <div class="fluid-container">
                               <h5 style="margin-left: -20px" class="mb-0  font-weight-medium">Atualizar projetos</h5>

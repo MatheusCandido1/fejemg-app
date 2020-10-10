@@ -15,21 +15,11 @@
       </a>
     </li>
     
-      <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#battles" aria-expanded="false" aria-controls="battles">
-        <span class="menu-title">Batalhas</span>
-        <i class="menu-arrow"></i>
-        <i class="mdi mdi-checkerboard menu-icon"></i>
-      </a>
-      <div class="collapse" id="battles">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Mais fortes </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Conectados </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Em toda Minas Gerais </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> Lideres que fazem </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> Projetos de Alto Impacto </a></li>
-        </ul>
-      </div>
+     <li class="nav-item">
+      <router-link class="nav-link" to="/fejemg">
+        <span class="menu-title">Minas Gerais</span>
+        <i class="mdi mdi-triangle menu-icon"></i>
+      </router-link>
     </li>
     <li class="nav-item">
       <router-link class="nav-link" to="/nucleos">
