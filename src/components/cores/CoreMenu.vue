@@ -5,7 +5,7 @@
                     <div class="card-col col-xl-2 col-lg-2 col-md-2 col-6 border-right">
                       <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
-                          <img v-bind:src="core_image" class="img-lg rounded" alt="profile image">
+                          <img v-bind:src="core_image" style="width: 100%; height: 100%" class="img-lg rounded" alt="profile image">
                         </div>
                       </div>
                     </div>

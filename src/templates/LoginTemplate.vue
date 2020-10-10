@@ -6,7 +6,7 @@
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
-                  <img src="/static/images/logo.svg">
+                 <img style="width:75%; height:75%;" src="https://avancoej.com.br/wp-content/uploads/2019/05/fejemg-logo-1024x3092-1.png" alt="logo" />
                 </div>
                 <slot name="main" /> 
               </div>
