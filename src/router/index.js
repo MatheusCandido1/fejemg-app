@@ -11,6 +11,7 @@ import JuniorEnterpriseResults from '@/components/juniorenterprises/JuniorEnterp
 import CoreAdd from '@/pages/core/CoreAdd'
 import CoreIndex from '@/pages/core/CoreIndex'
 import CoreDetail from '@/pages/core/CoreDetail'
+import FederationIndex from '@/pages/federation/FederationIndex'
 
 import ProjectAdd from '@/pages/project/ProjectAdd'
 
@@ -79,6 +80,11 @@ export default new Router({
       path: '/nucleo/:id/resultados/:year',
       name: 'CoreDetail',
       component: CoreDetail
+    },
+    {
+      path: '/fejemg',
+      name: 'FederationIndex',
+      component: FederationIndex
     }
   ]
 })
