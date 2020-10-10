@@ -73,11 +73,11 @@ export default {
     search: '',
     ejs: [], 
     headers: [
-          { text: 'Empresa Júnior', value: 'name'},
-          { text: 'Núcleo', value: 'core.name' },
-          { text: 'Cluster', value: 'cluster' },
-          { text: 'IES', value: 'foundation.name' },
-          { text: 'Ações', value: 'controls',sortable: false, },
+          { text: 'Empresa Júnior', value: 'name', align: 'start'},
+          { text: 'Núcleo', value: 'core.name', align: 'center' },
+          { text: 'Cluster', value: 'cluster', align: 'center' },
+          { text: 'IES', value: 'foundation.name', align: 'center' },
+          { text: 'Ações', value: 'controls',sortable: false, align: 'center' },
      ],
       dataLoaded: false,
     }
