@@ -12,10 +12,20 @@
                           </router-link>
                     </div>
                       <p></p>
+                      <v-card-title>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
                       <v-data-table
     :headers="headers"
     :items="ejs"
     :items-per-page="10"
+      :search="search"
     class="elevation-1"
     loading
     loading-text="Carregando..."
@@ -50,42 +60,6 @@
     </template>
   
   </v-data-table>
-                      <!--
-                    <table  class="table table-bordered">
-                      <thead class="text-center">
-                        <tr>
-                          <th>Empresa Júnior</th>
-                          <th> Núcleo </th>
-                          <th> Cluster </th>
-                          <th> IES </th>
-                          <th> Ações </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr v-for="item in ejs" :key="item.id" class="text-center">
-                          <td> {{item.name}}</td>
-                          <td> <div class="badge badge-pill text-white" :style="{ 'background-color': item.core.color }">{{item.core.name}}</div> </td>
-                          <td>
-                            <div class="badge badge-info badge-pill">{{item.cluster}}</div>
-                          </td>
-                          <td>
-                              <div class="badge badge-outline-dark badge-pill">{{item.foundation.name}}</div>
-                          </td>
-                          <td>
-                            <router-link :to="'empresa-junior/'+item.id+'/meta/'+new Date().getFullYear()+''">
-<button type="button" class="btn btn-dark btn-icon">
-                            <i class="mdi mdi-chart-line"></i>
-                          </button>
-                            </router-link>
-                            <router-link  :to="'empresa-junior/edit/'+item.id">
-<button type="button" class="btn btn-info btn-icon">
-                            <i class="mdi mdi-circle-edit-outline"></i>
-                          </button>
-                            </router-link>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table> -->
                   </div>
                 </div>
               </div>
@@ -96,8 +70,9 @@ export default {
     name: 'JuniorEnterpriseList',
     data () {
     return {
-      ejs: [], 
-     headers: [
+    search: '',
+    ejs: [], 
+    headers: [
           { text: 'Empresa Júnior', value: 'name'},
           { text: 'Núcleo', value: 'core.name' },
           { text: 'Cluster', value: 'cluster' },
