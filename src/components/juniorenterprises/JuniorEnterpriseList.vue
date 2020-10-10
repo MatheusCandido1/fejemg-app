@@ -16,7 +16,7 @@
       <v-text-field
         v-model="search"
         append-icon="mdi-magnify"
-        label="Search"
+        label="Pesquisar"
         single-line
         hide-details
       ></v-text-field>
@@ -77,7 +77,7 @@ export default {
           { text: 'Núcleo', value: 'core.name' },
           { text: 'Cluster', value: 'cluster' },
           { text: 'IES', value: 'foundation.name' },
-          { text: 'Ações', value: 'controls' },
+          { text: 'Ações', value: 'controls',sortable: false, },
      ],
       dataLoaded: false,
     }
