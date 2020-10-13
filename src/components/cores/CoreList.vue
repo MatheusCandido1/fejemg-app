@@ -35,10 +35,10 @@
        
     </template>
     <template v-slot:[`item.fat_nuc`]="{ item }">
-         <label class="badge badge-success">R$ {{item.fat_nuc}}</label>  
+         <label class="badge badge-info">R$ {{item.fat_nuc}}</label> / <label class="badge badge-success">R$ {{item.faturamento_meta}}</label>
     </template>
     <template v-slot:[`item.proj_nuc`]="{ item }">
-         <label class="badge badge-info">{{item.proj_nuc}}</label>  
+         <label class="badge badge-info">{{item.proj_nuc}} </label> / <label class="badge badge-success">{{item.projeto_meta}}</label>  
     </template>
      <template v-slot:[`item.controls`]="{ item }">
  <router-link  :to="'nucleo/'+item.id+'/resultados/2020'">
@@ -64,8 +64,8 @@ export default {
       dataLoaded: false,
        headers: [
           { text: 'Nome', value: 'name_nuc', align: 'center'},
-          { text: 'Faturamento', value: 'fat_nuc', align: 'center' },
-          { text: 'Projetos', value: 'proj_nuc', align: 'center' },
+          { text: 'Faturamento / Meta', value: 'fat_nuc', align: 'center' },
+          { text: 'Projetos / Meta', value: 'proj_nuc', align: 'center' },
           { text: 'Ações', value: 'controls',sortable: false, align: 'center' },
      ],
     }
