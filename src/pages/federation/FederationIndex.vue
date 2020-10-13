@@ -13,12 +13,12 @@
     <slot name="state" v-if="menu_option === 3">
         <FederationState/>
     </slot>
-<!--
+
     <slot name="leaders" v-if="menu_option === 4">
-        <CoreLeaders/>
+        <FederationLeaders/>
     </slot>
 
-    
+    <!--
     <slot name="impact" v-if="menu_option === 5">
         <CoreImpact/>
     </slot> -->
@@ -32,6 +32,7 @@ import FederationMenu from '@/components/federation/FederationMenu';
 import FederationStronger from '@/components/federation/FederationStronger';
 import FederationConnected from '@/components/federation/FederationConnected';
 import FederationState from '@/components/federation/FederationState';
+import FederationLeaders from '@/components/federation/FederationLeaders';
 
 export default {
     name: 'FederationIndex',
@@ -46,6 +47,7 @@ export default {
     FederationStronger,
     FederationConnected,
     FederationState,
+    FederationLeaders,
   }
 }
 </script>
