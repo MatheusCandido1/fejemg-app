@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <h1>Mais fortes </h1>
+                    <h1>Conectados </h1>
                 </div>
             </div>
         </div>
@@ -12,7 +12,7 @@
 <script>
 
 export default {
-    name: 'FederationStronger',
+    name: 'FederationConnected',
     data () {
     return {
       data: []
