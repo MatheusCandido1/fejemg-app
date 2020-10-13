@@ -18,7 +18,6 @@ export default {
     data: function() {
       return {
           dataLoaded: false,
-          chart_colors: [],
       series: [{name:'Resultado',data: []}],
           chartOptions: {
             legend: {
@@ -50,13 +49,11 @@ export default {
       this.usuario = this.$store.getters.getUsuario;
       this.$http.get(this.$urlAPI+`federacao/faturamento/nucleos/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
-         this.chart_colors = response.data.core
          this.series = [{
             name: 'Resultado',
             data: response.data.success_data
             }]; 
             this.dataLoaded = true;
-            console.log(this.chart_colors);
       })
     }
   },
