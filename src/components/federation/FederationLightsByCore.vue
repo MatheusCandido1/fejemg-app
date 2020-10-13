@@ -1,4 +1,6 @@
 <template>
+<span>
+<h3>Farol por Núcleo</h3>
 <v-carousel
     cycle
     height="400"
@@ -62,6 +64,7 @@
     </v-carousel-item>
     
   </v-carousel>
+  </span>
 </template>
 
 <script>
