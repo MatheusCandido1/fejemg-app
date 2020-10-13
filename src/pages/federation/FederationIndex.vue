@@ -18,10 +18,10 @@
         <FederationLeaders/>
     </slot>
 
-    <!--
+   
     <slot name="impact" v-if="menu_option === 5">
-        <CoreImpact/>
-    </slot> -->
+        <FederationImpact/>
+    </slot> 
   </span>
 </AppTemplate>
 </template>
@@ -33,6 +33,7 @@ import FederationStronger from '@/components/federation/FederationStronger';
 import FederationConnected from '@/components/federation/FederationConnected';
 import FederationState from '@/components/federation/FederationState';
 import FederationLeaders from '@/components/federation/FederationLeaders';
+import FederationImpact from '@/components/federation/FederationImpact';
 
 export default {
     name: 'FederationIndex',
@@ -48,6 +49,7 @@ export default {
     FederationConnected,
     FederationState,
     FederationLeaders,
+    FederationImpact
   }
 }
 </script>
