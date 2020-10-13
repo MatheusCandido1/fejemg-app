@@ -36,7 +36,7 @@ export default {
           yaxis: {
             labels: {
     formatter: function (value) {
-      return "R$ " + value;
+      {return  value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });}
     }
   },
           },

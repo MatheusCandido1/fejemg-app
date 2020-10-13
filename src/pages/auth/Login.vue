@@ -64,7 +64,7 @@ export default {
             timeOut: 3000
             })
           sessionStorage.setItem('usuario',JSON.stringify(response.data.usuario));
-          this.$router.push('/');
+          this.$router.push('/fejemg');
         }else if(response.data.status == false && response.data.validacao){
           console.log('erros de validação')
           let erros = '';

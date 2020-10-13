@@ -23,6 +23,13 @@ export default {
             legend: {
               show: false
             },
+             yaxis: {
+            labels: {
+    formatter: function (value) {
+      {return  value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });}
+    }
+  },
+          },
             chart: {
               height: 350,
               type: 'treemap',
