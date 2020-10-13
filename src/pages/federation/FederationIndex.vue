@@ -1,12 +1,14 @@
 <template>
 <AppTemplate>
   <span slot="content">
-      <h1>FEJEMG</h1>
+          <FederationMenu v-on:selectMenu="menu_option = $event" :menu_option="this.menu_option"  /> 
+
   </span>
 </AppTemplate>
 </template>
 <script>
 import AppTemplate from '@/templates/AppTemplate'
+import FederationMenu from '@/components/federation/FederationMenu';
 
 export default {
     name: 'FederationIndex',
@@ -16,6 +18,7 @@ export default {
   },
   components:{
     AppTemplate,
+    FederationMenu
   }
 }
 </script>
