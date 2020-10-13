@@ -8,6 +8,7 @@
                       <FederationBillingChart />
                           </div>
                            <div class="col-lg-6">
+                      <FederationProjectChart /> 
                           </div>
                           </div>
                 </div>
@@ -18,6 +19,7 @@
 <script>
 
 import FederationBillingChart from '../federation/FederationBillingChart';
+import FederationProjectChart from '../federation/FederationProjectChart';
 
 export default {
     name: 'FederationStronger',
@@ -27,7 +29,8 @@ export default {
     }
   },
   components:{
-    FederationBillingChart
+    FederationBillingChart,
+    FederationProjectChart
   },
 }
 </script>
