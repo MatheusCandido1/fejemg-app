@@ -49,12 +49,22 @@
                 </div>
               </div>
               </div>
-              
+               <div class="row">
+                <div class="col-md-6">
+                  <FederationClusterLightChart/>
+                </div>
+                <div class="col-md-6">
+                  <FederationLightsByCore/>
+                </div>
+
+                </div>
                 </div>
               </div>
         </div>
 </template>
 <script>
+import FederationClusterLightChart from '@/components/federation/FederationClusterLightChart'
+import FederationLightsByCore from '@/components/federation/FederationLightsByCore'
 
 export default {
     name: 'FederationLeaders',
@@ -73,7 +83,6 @@ export default {
         if(response.status){
           this.data = response.data.success_data;
           this.dataLoaded = true;
-          console.log(response.data.success_data);
         } 
       })
       .catch(e => {
@@ -92,6 +101,8 @@ export default {
 
   },
   components:{
+    FederationClusterLightChart,
+    FederationLightsByCore
   },
 }
 </script>
