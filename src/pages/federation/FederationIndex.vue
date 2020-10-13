@@ -29,7 +29,8 @@
 import AppTemplate from '@/templates/AppTemplate'
 import FederationMenu from '@/components/federation/FederationMenu';
 
-import FederationStronger from '@/components/federation/FederationStronger'
+import FederationStronger from '@/components/federation/FederationStronger';
+import FederationConnected from '@/components/federation/FederationConnected';
 
 export default {
     name: 'FederationIndex',
@@ -41,7 +42,8 @@ export default {
   components:{
     AppTemplate,
     FederationMenu,
-    FederationStronger
+    FederationStronger,
+    FederationConnected
   }
 }
 </script>
