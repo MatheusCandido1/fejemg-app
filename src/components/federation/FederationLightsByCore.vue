@@ -1,20 +1,21 @@
 <template>
 <span>
 <h3>Farol por Núcleo</h3>
+<v-app>
 <v-carousel
     cycle
     height="400"
     width="500"
     hide-delimiter-background
     show-arrows-on-hover
-    :show-arrows="false"
+    interval="5000"
   >
     <v-carousel-item
       v-for="(core, i) in cores"
       :key="i"
     >
     <div class="card-body">
-                    <img class="d-block img-lg mx-auto mb-2" style="width: 35%; height: 35%" :src="cores[i].core_image">
+                    <img class="d-block img-lg mx-auto mb-2" style="width: 25%; height: auto" :src="cores[i].core_image">
                     <div class="text-center"> 
                         <div class="badge badge-pill text-white  mx-auto mb-2" :style="{'background-color': cores[i].core_color}">
                             {{cores[i].core_name}}
@@ -64,6 +65,7 @@
     </v-carousel-item>
     
   </v-carousel>
+</v-app>
   </span>
 </template>
 
