@@ -32,22 +32,20 @@
         <v-card-title class="headline">
           EJs de Alto Crescimento
         </v-card-title>
-        <v-card-text style="height: 300px;">
-          <v-list dense>
-      <v-list-item-group
-        v-model="item"
-        color="primary"
-      >
-        <v-list-item
-          v-for="(item, i) in ejs_ac"
-          :key="i"
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="item"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
+         <v-card-text style="height: 300px;">
+         <div class="card-body">
+                    <div v-for="(item, i) in ejs_ac"
+          :key="i"  class="wrapper d-flex align-items-center py-2 border-bottom">
+                      <div class="wrapper ml-3">
+                        <router-link style=" color: inherit;" :to="{ name: 'JuniorEnterpriseDetail', params: { id: item.id, year: 2020 }}"> 
+                        <h6 class="ml-1 mb-1">{{item.name}}</h6>
+                        </router-link>
+                        <small class="text-muted mb-0">
+                          <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
+                      </div>
+                    </div>
+                  
+                  </div>
           </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -94,21 +92,19 @@
           EJs no Farol Verde
         </v-card-title>
         <v-card-text style="height: 300px;">
-          <v-list dense>
-      <v-list-item-group
-        v-model="item1"
-        color="primary"
-      >
-        <v-list-item
-          v-for="(item1, i) in ejs_green"
-          :key="i"
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="item1"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
+         <div class="card-body">
+                    <div v-for="(item, i) in ejs_green"
+          :key="i"  class="wrapper d-flex align-items-center py-2 border-bottom">
+                      <div class="wrapper ml-3">
+                        <router-link style=" color: inherit;" :to="{ name: 'JuniorEnterpriseDetail', params: { id: item.id, year: 2020 }}"> 
+                        <h6 class="ml-1 mb-1">{{item.name}}</h6>
+                        </router-link>
+                        <small class="text-muted mb-0">
+                          <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
+                      </div>
+                    </div>
+                  
+                  </div>
           </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -155,21 +151,19 @@
           EJs no Farol Amarelo
         </v-card-title>
         <v-card-text style="height: 300px;">
-          <v-list dense>
-      <v-list-item-group
-        v-model="item2"
-        color="primary"
-      >
-        <v-list-item
-          v-for="(item2, i) in ejs_yellow"
-          :key="i"
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="item2"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
+         <div class="card-body">
+                    <div v-for="(item, i) in ejs_yellow"
+          :key="i"  class="wrapper d-flex align-items-center py-2 border-bottom">
+                      <div class="wrapper ml-3">
+                        <router-link style=" color: inherit;" :to="{ name: 'JuniorEnterpriseDetail', params: { id: item.id, year: 2020 }}"> 
+                        <h6 class="ml-1 mb-1">{{item.name}}</h6>
+                        </router-link>
+                        <small class="text-muted mb-0">
+                          <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
+                      </div>
+                    </div>
+                  
+                  </div>
           </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -216,21 +210,19 @@
           EJs no Farol Vermelho
         </v-card-title>
         <v-card-text style="height: 300px;">
-          <v-list dense>
-      <v-list-item-group
-        v-model="item3"
-        color="primary"
-      >
-        <v-list-item
-          v-for="(item3, i) in ejs_red"
-          :key="i"
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="item3"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
+         <div class="card-body">
+                    <div v-for="(item, i) in ejs_red"
+          :key="i"  class="wrapper d-flex align-items-center py-2 border-bottom">
+                      <div class="wrapper ml-3">
+                        <router-link style=" color: inherit;" :to="{ name: 'JuniorEnterpriseDetail', params: { id: item.id, year: 2020 }}"> 
+                        <h6 class="ml-1 mb-1">{{item.name}}</h6>
+                        </router-link>
+                        <small class="text-muted mb-0">
+                          <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
+                      </div>
+                    </div>
+                  
+                  </div>
           </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
