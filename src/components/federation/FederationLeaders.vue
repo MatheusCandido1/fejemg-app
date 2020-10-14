@@ -73,6 +73,56 @@
                     <div class="d-flex align-items-center">
                       <h1 class="font-weight-medium text-success mb-2" v-if="dataLoaded" >{{this.data.green}}</h1>
                     </div>
+                    <v-row justify="center" v-if="this.ejs_green.length > 0">
+    <v-dialog
+      v-model="dialog1"
+      scrollable
+      max-width="600"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          color="#1bcfb4"
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          Ver todas
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title class="headline">
+          EJs no Farol Verde
+        </v-card-title>
+        <v-card-text style="height: 300px;">
+          <v-list dense>
+      <v-list-item-group
+        v-model="item1"
+        color="primary"
+      >
+        <v-list-item
+          v-for="(item1, i) in ejs_green"
+          :key="i"
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="item1"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>
+    </v-list>
+          </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog1 = false"
+          >
+            Fechar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
                     
                   </div>
                 </div>
