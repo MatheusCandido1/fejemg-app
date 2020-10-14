@@ -42,9 +42,11 @@
                         <small class="text-muted mb-0">
                           <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
                       </div>
-                      <div class="badge badge-pill ml-auto px-1 py-1 text-white" :style="{ 'background-color': item.color }">
-                        {{item.core}}
+                      <router-link class="ml-auto" style="text-decoration: none; color: inherit;" :to="{ name: 'CoreDetail', params: { id: item.core.id, year: 2020 }}"> 
+                      <div class="badge badge-pill ml-auto text-white" :style="{ 'background-color': item.core.color }">
+                        {{item.core.name}}
                       </div>
+                      </router-link>
                       
                     </div>
                   
@@ -106,9 +108,11 @@
                         <small class="text-muted mb-0">
                           <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
                       </div>
-                      <div class="badge badge-pill ml-auto px-1 py-1 text-white" :style="{ 'background-color': item.color }">
-                        {{item.core}}
+                       <router-link class="ml-auto" style="text-decoration: none; color: inherit;" :to="{ name: 'CoreDetail', params: { id: item.core.id, year: 2020 }}"> 
+                      <div class="badge badge-pill ml-auto text-white" :style="{ 'background-color': item.core.color }">
+                        {{item.core.name}}
                       </div>
+                      </router-link>
                       
                     </div>
                   
@@ -170,9 +174,11 @@
                         <small class="text-muted mb-0">
                           <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
                       </div>
-                      <div class="badge badge-pill ml-auto px-1 py-1 text-white" :style="{ 'background-color': item.color }">
-                        {{item.core}}
+                       <router-link class="ml-auto" style="text-decoration: none; color: inherit;" :to="{ name: 'CoreDetail', params: { id: item.core.id, year: 2020 }}"> 
+                      <div class="badge badge-pill ml-auto text-white" :style="{ 'background-color': item.core.color }">
+                        {{item.core.name}}
                       </div>
+                      </router-link>
                       
                     </div>
                   
@@ -233,9 +239,11 @@
                         <small class="text-muted mb-0">
                           <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
                       </div>
-                      <div class="badge badge-pill ml-auto px-1 py-1 text-white" :style="{ 'background-color': item.color }">
-                        {{item.core}}
+                       <router-link class="ml-auto" style="text-decoration: none; color: inherit;" :to="{ name: 'CoreDetail', params: { id: item.core.id, year: 2020 }}"> 
+                      <div class="badge badge-pill ml-auto text-white" :style="{ 'background-color': item.core.color }">
+                        {{item.core.name}}
                       </div>
+                      </router-link>
                       
                     </div>
                   
