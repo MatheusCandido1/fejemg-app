@@ -33,18 +33,18 @@
         </v-card-title>
         <v-card-text style="height: 300px;">
           <v-list dense>
-      <v-list-item-group
-        v-model="item"
-        color="primary"
-      >
+      <v-list-item-group >
         <v-list-item
           v-for="(item, i) in ejs_ac"
           :key="i"
         >
+        <router-link  style="text-decoration: none; color: inherit;"
+ :to="{ name: 'JuniorEnterpriseDetail', params: { id: item.id, year: 2020 }}">
           <v-list-item-content>
-            <v-list-item-title v-text="item"></v-list-item-title>
-            <v-list-item-title v-text=ejs_ac_core[i]></v-list-item-title>
+            <v-list-item-title v-text="item.name"></v-list-item-title>
+            <v-list-item-title v-text="item.core"></v-list-item-title>
           </v-list-item-content>
+        </router-link>
         </v-list-item>
       </v-list-item-group>
     </v-list>
@@ -52,7 +52,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="green darken-1"
+            color="#198ae3"
             text
             @click="dialog = false"
           >
@@ -96,17 +96,18 @@
         </v-card-title>
         <v-card-text style="height: 300px;">
           <v-list dense>
-      <v-list-item-group
-        v-model="item1"
-        color="primary"
-      >
+      <v-list-item-group >
         <v-list-item
           v-for="(item1, i) in ejs_green"
           :key="i"
         >
+        <router-link  style="text-decoration: none; color: inherit;"
+ :to="{ name: 'JuniorEnterpriseDetail', params: { id: item1.id, year: 2020 }}">
           <v-list-item-content>
-            <v-list-item-title v-text="item1"></v-list-item-title>
+            <v-list-item-title v-text="item1.name"></v-list-item-title>
+            <v-list-item-title v-text="item1.core"></v-list-item-title>
           </v-list-item-content>
+        </router-link>
         </v-list-item>
       </v-list-item-group>
     </v-list>
@@ -114,7 +115,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="green darken-1"
+            color="#1bcfb4"
             text
             @click="dialog1 = false"
           >
@@ -136,7 +137,7 @@
                     <div class="d-flex align-items-center">
                       <h1 class="font-weight-medium text-warning mb-2" v-if="dataLoaded" >{{this.data.yellow}}</h1>
                     </div>
-                     <v-row justify="center" v-if="this.ejs_yellow.length > 0">
+                      <v-row justify="center" v-if="this.ejs_yellow.length > 0">
     <v-dialog
       v-model="dialog2"
       scrollable
@@ -158,17 +159,18 @@
         </v-card-title>
         <v-card-text style="height: 300px;">
           <v-list dense>
-      <v-list-item-group
-        v-model="item2"
-        color="primary"
-      >
+      <v-list-item-group >
         <v-list-item
           v-for="(item2, i) in ejs_yellow"
           :key="i"
         >
+        <router-link  style="text-decoration: none; color: inherit;"
+ :to="{ name: 'JuniorEnterpriseDetail', params: { id: item2.id, year: 2020 }}">
           <v-list-item-content>
-            <v-list-item-title v-text="item2"></v-list-item-title>
+            <v-list-item-title v-text="item2.name"></v-list-item-title>
+            <v-list-item-title v-text="item2.core"></v-list-item-title>
           </v-list-item-content>
+        </router-link>
         </v-list-item>
       </v-list-item-group>
     </v-list>
@@ -176,7 +178,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="green darken-1"
+            color="#fed713"
             text
             @click="dialog2 = false"
           >
@@ -197,7 +199,7 @@
                     <div class="d-flex align-items-center">
                       <h1 class="font-weight-medium text-danger mb-2" v-if="dataLoaded" >{{this.data.red}}</h1>
                     </div>
-                    <v-row justify="center" v-if="this.ejs_red.length > 0">
+                  <v-row justify="center" v-if="this.ejs_red.length > 0"> 
     <v-dialog
       v-model="dialog3"
       scrollable
@@ -219,17 +221,18 @@
         </v-card-title>
         <v-card-text style="height: 300px;">
           <v-list dense>
-      <v-list-item-group
-        v-model="item3"
-        color="primary"
-      >
+      <v-list-item-group> 
         <v-list-item
           v-for="(item3, i) in ejs_red"
           :key="i"
         >
+        <router-link  style="text-decoration: none; color: inherit;"
+ :to="{ name: 'JuniorEnterpriseDetail', params: { id: item3.id, year: 2020 }}">
           <v-list-item-content>
-            <v-list-item-title v-text="item3"></v-list-item-title>
+            <v-list-item-title v-text="item3.name"></v-list-item-title>
+            <v-list-item-title v-text="item3.core"></v-list-item-title>
           </v-list-item-content>
+        </router-link>
         </v-list-item>
       </v-list-item-group>
     </v-list>
@@ -237,7 +240,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="green darken-1"
+            color="#fe7c96"
             text
             @click="dialog3 = false"
           >
@@ -246,7 +249,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </v-row>
+  </v-row>  
                   </div>
                 </div>
               </div>
@@ -283,7 +286,6 @@ export default {
       item2: 1,
       item3: 1,
       ejs_ac: [],
-      ejs_ac_core: [],
       ejs_green: [],
       ejs_yellow: [],
       ejs_red: [],
@@ -298,8 +300,7 @@ export default {
         if(response.status){
           this.data = response.data.success_data;
           this.dataLoaded = true;
-          this.ejs_ac = response.data.ejs.ac.name;
-          this.ejs_ac_core = response.data.ejs.ac.core;
+          this.ejs_ac = response.data.ejs.ac;
           this.ejs_green = response.data.ejs.green;
           this.ejs_yellow = response.data.ejs.yellow;
           this.ejs_red = response.data.ejs.red;
