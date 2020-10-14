@@ -7,7 +7,7 @@
                       <FederationConnectedList />
                           </div>
                            <div class="col-lg-4">
-                  
+                  <FederationConnectedStatus/>
                           </div>
                 </div>
             </div>
@@ -16,6 +16,7 @@
 </template>
 <script>
 import FederationConnectedList from '../federation/FederationConnectedList';
+import FederationConnectedStatus from '../federation/FederationConnectedStatus';
 export default {
     name: 'FederationConnected',
     data () {
@@ -24,7 +25,8 @@ export default {
     }
   },
   components:{
-      FederationConnectedList
+      FederationConnectedList,
+      FederationConnectedStatus
   },
 }
 </script>
