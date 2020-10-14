@@ -1,5 +1,5 @@
 <template>
-    <span >
+    <span data-app>
         <div class="grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -12,7 +12,56 @@
                     <div class="d-flex align-items-center">
                       <h1 class="font-weight-medium text-info mb-2" v-if="dataLoaded" >{{this.data.ac}}</h1>
                     </div>
-                    
+  <v-row justify="center">
+    <v-dialog
+      v-model="dialog"
+      scrollable
+      max-width="600"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          color="#198ae3"
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          Ver todas
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title class="headline">
+          EJs de Alto Crescimento
+        </v-card-title>
+        <v-card-text style="height: 300px;">
+          <v-list dense>
+      <v-list-item-group
+        v-model="item"
+        color="primary"
+      >
+        <v-list-item
+          v-for="(item, i) in ejs_ac"
+          :key="i"
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="item"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>
+    </v-list>
+          </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog = false"
+          >
+            Fechar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
                   </div>
                 </div>
               </div>
@@ -24,6 +73,56 @@
                     <div class="d-flex align-items-center">
                       <h1 class="font-weight-medium text-success mb-2" v-if="dataLoaded" >{{this.data.green}}</h1>
                     </div>
+                    <v-row justify="center">
+    <v-dialog
+      v-model="dialog1"
+      scrollable
+      max-width="600"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          color="#1bcfb4"
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          Ver todas
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title class="headline">
+          EJs no Farol Verde
+        </v-card-title>
+        <v-card-text style="height: 300px;">
+          <v-list dense>
+      <v-list-item-group
+        v-model="item1"
+        color="primary"
+      >
+        <v-list-item
+          v-for="(item1, i) in ejs_green"
+          :key="i"
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="item1"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>
+    </v-list>
+          </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog1 = false"
+          >
+            Fechar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
                   </div>
                 </div>
               </div>
@@ -54,6 +153,9 @@
                 <div class="col-md-6">
                   <CoreClusterLightChart/>
                 </div>
+                <!-- <div class="col-md-6">
+                  <CoreBillingByEjChart/>
+                </div> -->
 
                 </div>
               
@@ -66,13 +168,22 @@
 <script>
 
 import CoreClusterLightChart from '../cores/CoreClusterLightChart';
+import CoreBillingByEjChart from '../cores/CoreBillingByEjChart';
 
 export default {
     name: 'CoreLeaders',
     data () {
     return {
       data: [],
-      dataLoaded: false
+      dataLoaded: false,
+      dialog: false,
+      dialog1: false,
+      item: 1,
+      item1: 1,
+      ejs_ac: [],
+      ejs_green: [],
+      ejs_yellow: [],
+      ejs_red: [],
     }
   },
   mounted(){
@@ -85,7 +196,12 @@ export default {
       .then(response => {
         if(response.status){
           this.data = response.data.success_data;
+          this.ejs_ac = response.data.ejs.ac;
+          this.ejs_green = response.data.ejs.green;
+          this.ejs_yellow = response.data.ejs.yellow;
+          this.ejs_red = response.data.ejs.red;
           this.dataLoaded = true;
+          console.log(this.ejs_ac);
         } 
       })
       .catch(e => {
@@ -104,7 +220,8 @@ export default {
 
   },
   components:{
-    CoreClusterLightChart
+    CoreClusterLightChart,
+    CoreBillingByEjChart
   },
 }
 </script>

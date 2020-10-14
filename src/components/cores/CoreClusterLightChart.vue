@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
             <h4 class="card-title">Farol por Cluster</h4>
-                <apexchart width="600" type="bar" :options="chartOptions" :series="series"></apexchart>
+                <apexchart width="450" type="bar" :options="chartOptions" :series="series"></apexchart>
         </div>
     </div>
 </div>
