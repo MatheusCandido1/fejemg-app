@@ -3,14 +3,14 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <h1>em toda MG </h1>
+                    <FederationStateWidget />
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-
+import FederationStateWidget from '../federation/FederationStateWidget';
 export default {
     name: 'FederationState',
     data () {
@@ -19,6 +19,7 @@ export default {
     }
   },
   components:{
+      FederationStateWidget
   },
 }
 </script>
