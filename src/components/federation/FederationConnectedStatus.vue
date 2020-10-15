@@ -17,18 +17,19 @@
     
     <div class="row text-center">
 <div class="card-col col-xl-4 col-lg-4 col-md-4 col-4" >
-                <div class="card-body" style="width: 90px; height: 90px; background-color: #1bcfb4; border-radius: 15px;">
-          
+                <div class="card-body align-items-center d-flex justify-content-center" style="width: 90px; height: 90px; background-color: #1bcfb4; border-radius: 15px; text-align: center;">
+            <h3 style="white-space: nowrap;" class="text-white">3</h3>
         </div>
     </div>
     <div class="card-col col-xl-4 col-lg-4 col-md-4 col-4" >
-                <div class="card-body" style="width: 90px; height: 90px; background-color: #fed713; border-radius: 15px;">
-          
+                <div class="card-body align-items-center d-flex justify-content-center" style="width: 90px; height: 90px; background-color: #fed713; border-radius: 15px;">
+                      <h3 style="white-space: nowrap;" class="text-white">7</h3>
+
         </div>
     </div>
     <div class="card-col col-xl-4 col-lg-4 col-md-4 col-4" >
-                <div class="card-body" style="width: 90px; height: 90px; background-color: #fe7c96; border-radius: 15px;">
-          
+                <div class="card-body align-items-center d-flex justify-content-center" style="width: 90px; height: 90px; background-color: #fe7c96; border-radius: 15px;">
+                                <h3 style="white-space: nowrap;" class="text-white">7</h3>
         </div>
     </div>
     </div>

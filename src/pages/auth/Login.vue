@@ -50,9 +50,7 @@ export default {
         password:this.password
       })
       .then(response => {
-        //console.log(response)
         if(response.data.status){
-          // login com sucesso
           this.$toast.success({
             title:'Bem vindo',
             message:'Login realizado com sucesso!',
