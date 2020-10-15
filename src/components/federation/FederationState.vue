@@ -5,7 +5,8 @@
                 <div class="row">
                     <FederationStateWidget />
                 </div>
-                <div class="row">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <h3 class="">Empresas Juniores por Instituição de Ensino</h3>
                     <FederationStateTreeMapChart />
                 </div>
             </div>

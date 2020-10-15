@@ -4,13 +4,21 @@
 
                 <div class="card">
                   <div class="card-body">
+                      
+                   <div class="row d-flex align-items-center justify-content-center">
+                        <div class="badge badge-pill text-white mr-2" style="background-color: #c90738; font-size: 16px ">IES Juniores</div>
+                                            <div class="badge badge-pill text-white" style="background-color: #C99807; font-size: 16px ">IES</div>
+
+                    </div>
                     <div class="d-flex justify-content-center">
-        <apexchart type="treemap" height="500" :options="chartOptions" :series="series"></apexchart>
+        <apexchart type="treemap" height="350" width="750" :options="chartOptions" :series="series"></apexchart>
                     </div>
                   </div>
                 </div>
+              
 
      </div>
+               
 </div>
 </template>
 <script>
@@ -23,31 +31,37 @@ export default {
           dataLoaded: false,
       series: [{name:'Resultado',data: []}],
           chartOptions: {
-            legend: {
-              show: false
-            },
-             yaxis: {
-            labels: {
-    formatter: function (value) {
-      {return  value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });}
-    }
-  },
-          },
             chart: {
               height: 350,
               type: 'treemap',
-               toolbar: {
+              toolbar: {
             show: false
             },
             },
-            colors: ["#0067e2","#054d4f","#fb6e64","#971d6f","#f9c800","#ff7200","#e8306b"],
-            plotOptions: {
+             plotOptions: {
               treemap: {
-                distributed: true,
-                enableShades: false
+                enableShades: true,
+                shadeIntensity: 0.1,
+                reverseNegativeShade: false,
+                colorScale: {
+                  ranges: [
+                    {
+                      from: 0,
+                      to: 4,
+                      color: '#C99807'
+                    },
+                    {
+                      from: 4,
+                      to: 200,
+                      color: '#c90738'
+                    }
+                  ]
+                }
               }
-            }
+          }
+
           },
+         
     }
   },
   components: {
@@ -57,7 +71,7 @@ export default {
        let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`federacao/faturamento/nucleos/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`federacao/estados/ies/2020`, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
          this.series = [{
             name: 'Resultado',
