@@ -245,9 +245,9 @@
                 <div class="col-md-6">
                   <CoreClusterLightChart/>
                 </div>
-                <!-- <div class="col-md-6">
-                  <CoreBillingByEjChart/>
-                </div> -->
+                 <div class="col-md-6">
+                  <CoreLeadersTopList/>
+                </div> 
 
                 </div>
               
@@ -260,7 +260,7 @@
 <script>
 
 import CoreClusterLightChart from '../cores/CoreClusterLightChart';
-import CoreBillingByEjChart from '../cores/CoreBillingByEjChart';
+import CoreLeadersTopList from '../cores/CoreLeadersTopList';
 
 export default {
     name: 'CoreLeaders',
@@ -317,7 +317,7 @@ export default {
   },
   components:{
     CoreClusterLightChart,
-    CoreBillingByEjChart
+    CoreLeadersTopList
   },
 }
 </script>
