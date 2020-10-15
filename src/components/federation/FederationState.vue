@@ -5,12 +5,16 @@
                 <div class="row">
                     <FederationStateWidget />
                 </div>
+                <div class="row">
+                    <FederationStateTreeMapChart />
+                </div>
             </div>
         </div>
     </div>
 </template>
 <script>
 import FederationStateWidget from '../federation/FederationStateWidget';
+import FederationStateTreeMapChart from '../federation/FederationStateTreeMapChart';
 export default {
     name: 'FederationState',
     data () {
@@ -19,7 +23,8 @@ export default {
     }
   },
   components:{
-      FederationStateWidget
+      FederationStateWidget,
+      FederationStateTreeMapChart
   },
 }
 </script>
