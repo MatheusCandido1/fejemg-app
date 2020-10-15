@@ -1,9 +1,16 @@
 <template>
-    <span>
-        <h1>Núcleo - MG</h1>
-    </span>
+     <div class="grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <CoreStateWidget />
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
+import CoreStateWidget from '../cores/CoreStateWidget';
 export default {
     name: 'CoreState',
     data () {
@@ -12,6 +19,7 @@ export default {
     }
   },
   components:{
+    CoreStateWidget
   },
 }
 </script>

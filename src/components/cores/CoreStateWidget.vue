@@ -5,7 +5,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-center">
-                      <i class="mdi mdi-rocket icon-lg text-primary d-flex align-items-center"></i>
+                      <i class="mdi mdi-rocket icon-lg d-flex align-items-center" :style="{'color': this.color}"></i>
                       <div class="d-flex flex-column ml-4">
                         <div class="d-flex flex-column">
                           <p class="mb-0" style="white-space: nowrap;">Empresas Juniores</p>
@@ -22,7 +22,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-center">
-                      <i class="mdi mdi-cash-multiple icon-md text-primary d-flex align-items-center"></i>
+                      <i class="mdi mdi-cash-multiple icon-md d-flex align-items-center" :style="{'color': this.color}"></i>
                       <div class="d-flex flex-column ml-4">
                         <div class="d-flex flex-column">
                           <p class="mb-0" style="white-space: nowrap;">Fat. por empresário junior</p>
@@ -39,7 +39,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-center">
-                      <i class="mdi mdi-bank icon-md text-primary d-flex align-items-center"></i>
+                      <i class="mdi mdi-bank icon-md  d-flex align-items-center" :style="{'color': this.color}"></i>
                       <div class="d-flex flex-column ml-4">
                         <div class="d-flex flex-column">
                           <p class="mb-0" style="white-space: nowrap;">Nº de IES</p>
@@ -56,7 +56,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-center">
-                      <i class="mdi mdi-school icon-md text-primary d-flex align-items-center"></i>
+                      <i class="mdi mdi-school icon-md  d-flex align-items-center" :style="{'color': this.color}"></i>
                       <div class="d-flex flex-column ml-4">
                         <div class="d-flex flex-column">
                           <p class="mb-0" style="white-space: nowrap;">Nº de IES Juniores</p>
@@ -73,24 +73,28 @@
 <script>
 
 export default {
-    name: 'FederationStateWidget',
+    name: 'CoreStateWidget',
     data () {
     return {
       dataLoaded: false,
+      color: '',
       goals: [],
       result: []
     }
   },
   methods: {
   getData() {
+    let id = this.$route.params.id
+    let year = this.$route.params.year
     let usuarioAux = this.$store.getters.getUsuario;
     if(usuarioAux){
       this.usuario = this.$store.getters.getUsuario;
-      this.$http.get(this.$urlAPI+`federacao/estado/indicadores/`+new Date().getFullYear(), {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
+      this.$http.get(this.$urlAPI+`nucleos/`+id+`/estado/indicadores/`+year, {"headers":{"authorization":"Bearer "+this.$store.getters.getToken}})
       .then(response => {
         if(response.status){
           this.goals = response.data.success_data.goal;
           this.result = response.data.success_data.result;
+          this.color = response.data.core.color;
           this.dataLoaded = true;
         }
       })
