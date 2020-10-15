@@ -19,7 +19,7 @@
     :search="search"
     class="elevation-1"
     loading
-    loading-text="Carregando..."
+    loading-text="Nenhuma EJ foi encontrada :("
   >
    <template v-slot:[`item.name`]="{ item }">
           {{ item.name }}  
