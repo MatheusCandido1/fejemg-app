@@ -163,7 +163,6 @@ export default {
             hideDuration: 1000,
             timeOut: 3000
             })
-                window.location.reload()
 
         }else if(response.data.status == false && response.data.validacao){
           console.log(response.data.status);
