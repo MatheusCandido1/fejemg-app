@@ -3,13 +3,15 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <h1>Impacto </h1>
+                    <FederationImpactWidget />
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+
+import FederationImpactWidget from '../federation/FederationImpactWidget';
 
 export default {
     name: 'FederationImpact',
@@ -19,6 +21,7 @@ export default {
     }
   },
   components:{
+    FederationImpactWidget
   },
 }
 </script>
