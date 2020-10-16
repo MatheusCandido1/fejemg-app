@@ -1,9 +1,18 @@
 <template>
-    <span>
-        <h1>Núcleo - Alto Impacto</h1>
-    </span>
+    <div class="grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <CoreImpactWidget />
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
+
+import CoreImpactWidget from '../cores/CoreImpactWidget';
+
 export default {
     name: 'CoreImpact',
     data () {
@@ -12,6 +21,7 @@ export default {
     }
   },
   components:{
+    CoreImpactWidget
   },
 }
 </script>
