@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
             <h4 class="card-title"></h4>
-        <apexchart type="treemap" height="500" :options="chartOptions" :series="series"></apexchart>
+        <apexchart type="treemap" height="500" width="500" :options="chartOptions" :series="series"></apexchart>
         </div>
     </div>
 </div>
