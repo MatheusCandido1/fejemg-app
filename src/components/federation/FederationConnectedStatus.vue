@@ -1,8 +1,8 @@
 <template>
 <span>
+<h3>Farol de EJs Conectadas</h3>
 <div class="card" v-if="dataLoaded">
                   <div class="card-body">
-                    <h4 class="card-title">Farol de EJs Conectadas</h4>
 <div class="row ">
     <div class="card-col col-xl-6 col-lg-6 col-md-6 col-6 text-center ">
         <div class="card-body" style="align-items: center; justify-content: center; width: 290px; height: 150px; background-color: #198ae3; border-radius: 15px;">
