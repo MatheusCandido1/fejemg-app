@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/pages/auth/Login'
 import Register from '@/pages/auth/Register'
-import Home from '@/pages/home/Home.vue'
 import JuniorEnterpriseIndex from '@/pages/juniorenterprise/JuniorEnterpriseIndex'
 import JuniorEnterpriseAdd from '@/pages/juniorenterprise/JuniorEnterpriseAdd'
 import JuniorEnterpriseDetail from '@/pages/juniorenterprise/JuniorEnterpriseDetail'
@@ -21,11 +20,6 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
     {
       path: '/login',
       name: 'Login',
