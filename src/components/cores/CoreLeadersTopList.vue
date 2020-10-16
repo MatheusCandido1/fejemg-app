@@ -2,14 +2,16 @@
                 <div class="card" v-if="dataLoaded">
                   <div class="card-body">
                     <h4 class="card-title">Top 5 EJs próximas ao Alto Crescimento</h4>
-                    <div class="wrapper d-flex align-items-center py-2 border-bottom">
+                    <div v-for="item in list" :key="item.id" class="wrapper d-flex align-items-center py-2 border-bottom">
                       <div class="wrapper ml-3">
-                        <h6 class="ml-1 mb-1">Stella Davidson</h6>
+                                                <router-link style=" color: inherit;" :to="{ name: 'JuniorEnterpriseDetail', params: { id: item.id, year: 2020 }}"> 
+                        <h6 class="ml-1 mb-1">{{item.name}}</h6>
+                                                </router-link>
                         <small class="text-muted mb-0">
-                          <i class="mdi mdi-map-marker-outline mr-1"></i>New York City, USA</small>
+                          <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
                       </div>
                       <div class="badge badge-pill badge-success ml-auto px-1 py-1">
-                        <i class="mdi mdi-check"></i>
+                        {{item.porc.toFixed(2)}}%
                       </div>
                     </div>
                    
