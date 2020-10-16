@@ -1,8 +1,8 @@
 <template>
 <span v-if="dataLoaded">
+<h3>Empresas Juniores Conectadas</h3>
   <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Empresas Júniores Conectadas</h4>
                          <v-card-title>
       <v-text-field
         v-model="search"

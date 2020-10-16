@@ -1,7 +1,8 @@
 <template>
+<span>
+<h3>Top 5 EJs próximas ao Alto Crescimento</h3>
                 <div class="card" v-if="dataLoaded">
                   <div class="card-body">
-                    <h4 class="card-title">Top 5 EJs próximas ao Alto Crescimento</h4>
                     <div v-for="item in list" :key="item.id" class="wrapper d-flex align-items-center py-2 border-bottom">
                       <div class="wrapper ml-3">
                                                 <router-link style=" color: inherit;" :to="{ name: 'JuniorEnterpriseDetail', params: { id: item.id, year: 2020 }}"> 
@@ -17,6 +18,7 @@
                    
                   </div>
                 </div>
+</span>
 </template>
 <script>
 import VueApexCharts from "vue-apexcharts";

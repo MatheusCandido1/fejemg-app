@@ -1,12 +1,14 @@
 <template>
+<span>
+<h3>Mandala</h3>
 <div class="col-lg-12 col-xl-12 col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-          <h4 class="card-title">Mandala</h4>
         <apexchart style="margin-top: -50px" type="radar" height="650" :options="chartOptions" :series="series"></apexchart>
         </div>
     </div>
 </div>
+</span>
 </template>
 <script>
 import VueApexCharts from "vue-apexcharts";
