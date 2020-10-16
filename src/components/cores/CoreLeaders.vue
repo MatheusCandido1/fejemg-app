@@ -40,8 +40,11 @@
                         <router-link style=" color: inherit;" :to="{ name: 'JuniorEnterpriseDetail', params: { id: item.id, year: 2020 }}"> 
                         <h6 class="ml-1 mb-1">{{item.name}}</h6>
                         </router-link>
+                        
                         <small class="text-muted mb-0">
                           <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
+                            <div class="badge badge-info badge-pill">
+ Cluster  {{item.cluster}} </div>
                       </div>
                     </div>
                   
@@ -101,6 +104,8 @@
                         </router-link>
                         <small class="text-muted mb-0">
                           <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
+                          <div class="badge badge-info badge-pill">
+ Cluster  {{item.cluster}} </div>
                       </div>
                     </div>
                   
@@ -160,6 +165,8 @@
                         </router-link>
                         <small class="text-muted mb-0">
                           <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
+                          <div class="badge badge-info badge-pill">
+ Cluster  {{item.cluster}} </div>
                       </div>
                     </div>
                   
@@ -219,6 +226,8 @@
                         </router-link>
                         <small class="text-muted mb-0">
                           <i class="mdi mdi-map-marker-outline mr-1"></i>{{item.ies}}</small>
+                          <div class="badge badge-info badge-pill">
+ Cluster  {{item.cluster}} </div>
                       </div>
                     </div>
                   
