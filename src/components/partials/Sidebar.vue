@@ -16,7 +16,7 @@
     </li>
     
      <li class="nav-item">
-      <router-link class="nav-link" to="/fejemg">
+      <router-link class="nav-link" to="/">
         <span class="menu-title">Minas Gerais</span>
         <i class="mdi mdi-triangle menu-icon"></i>
       </router-link>
