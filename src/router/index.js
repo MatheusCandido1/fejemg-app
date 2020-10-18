@@ -76,7 +76,7 @@ export default new Router({
       component: CoreDetail
     },
     {
-      path: '/fejemg',
+      path: '/',
       name: 'FederationIndex',
       component: FederationIndex
     }
